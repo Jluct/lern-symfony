@@ -1,0 +1,22 @@
+jluct_blog:
+    resource: "@JluctBlogBundle/Resources/config/routing.yml"
+    prefix:   /
+
+app:
+    resource: "@AppBundle/Controller/"
+    type:     annotation
+
+lucky_number:
+    path: /lucky/number
+    defaults: {_controller: AppBundle:Lucky:number}
+
+lucky_limit:
+    path: /lucky/limit/{min}/{max}.{_format}
+    defaults: {_controller:AppBundle:Lucky:limit, min: 0, max: 100, _format: html}
+    requirements:
+        int: '\d+'
+        _format: html|rss
+
+lucky_list:
+    path: /lucky/list
+    defaults: {_controller: AppBundle:Lucky:list}

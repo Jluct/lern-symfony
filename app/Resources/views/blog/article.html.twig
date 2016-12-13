@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    <a role="button" class="btn btn-info btn-raised" href="{{ path('jluct_blog_category_get',{'id':article.category.id}) }}">Назад</a>
+    <h1>{{ article.title }}</h1>
+    <h3>{{ category.title }}</h3>
+    <div>{{ article.article|raw }}</div>
+    <div>{{ article.created|date('Y-m-d H:i:s') }}</div>
+    {#'Y-m-d h:m:s'#}
+{% endblock %}

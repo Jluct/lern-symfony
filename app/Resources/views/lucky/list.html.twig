@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h3>Список чисел:</h3>
+    <ul>
+        {% for number in array %}
+            {% if number%2==0 %}
+                <li style="color: red;">{{ number }}</li>
+            {% else %}
+                <li style="color: green;">{{ number }}</li>
+            {% endif %}
+        {% endfor %}
+    </ul>
+
+{% endblock %}

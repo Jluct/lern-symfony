@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Hello My Blog!</h1>
+
+    <ul>
+        <li><a href="{{ path('jluct_blog_article_add') }}">Добавить статью</a></li>
+    </ul>
+
+    <hr>
+
+    <ul>
+        {% for item in category if category %}
+            <li><a href="{{ path('jluct_blog_category_get',{'id':item.id}) }}">{{ item.title|upper }}</a></li>
+        {% endfor %}
+    </ul>
+
+    <hr>
+
+    <ul>
+        {% for item in data if data %}
+            <li><a href="{{ path('jluct_blog_article_get',{'category':item.category.id,'id':item.id}) }}">{{ item.title|upper }}</a></li>
+        {% endfor %}
+    </ul>
+{% endblock %}

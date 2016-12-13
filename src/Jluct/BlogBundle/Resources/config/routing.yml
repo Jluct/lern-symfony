@@ -1,0 +1,22 @@
+jluct_blog_homepage:
+    path:     /blog
+    defaults: { _controller: JluctBlogBundle:Default:index }
+
+
+jluct_blog_category_get:
+    path: /blog/category/{id}
+    defaults: {_controller: JluctBlogBundle:Default:getCategory}
+    requirements:
+        id: '\d+'
+
+jluct_blog_article_get:
+    path:     /blog/article/{category}/{id}
+    defaults: { _controller: JluctBlogBundle:Default:getArticle}
+    requirements:
+        category: '\d+'
+        id: '\d+'
+
+
+jluct_blog_article_add:
+    path:     /blog/article/add
+    defaults: { _controller: JluctBlogBundle:Default:addArticle}
