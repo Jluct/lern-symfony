@@ -1,3 +1,7 @@
+ias_game:
+    resource: "@IasGameBundle/Resources/config/routing.yml"
+    prefix:   /
+
 jluct_blog:
     resource: "@JluctBlogBundle/Resources/config/routing.yml"
     prefix:   /
