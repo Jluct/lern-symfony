@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8"/>
     <title>{% block title %}AIS GAME!{% endblock %}</title>
-    <link href="{{ asset('/bundles/app/vendor/css/bootstrap.min.css') }}" rel="stylesheet" />
-    <link href="{{ asset('/bundles/app/vendor/css/bootstrap-material-design.min.css') }}" rel="stylesheet" />
-    <link href="{{ asset('/bundles/app/vendor/css/ripples.css') }}" rel="stylesheet" />
-    <link href="{{ asset('/bundles/app/css/blog.css') }}" rel="stylesheet" />
+    <link href="{{ asset('/bundles/app/vendor/css/bootstrap.min.css') }}" rel="stylesheet"/>
+    <link href="{{ asset('/bundles/app/vendor/css/bootstrap-material-design.min.css') }}" rel="stylesheet"/>
+    <link href="{{ asset('/bundles/app/vendor/css/ripples.css') }}" rel="stylesheet"/>
+    <link href="{{ asset('/bundles/app/css/blog.css') }}" rel="stylesheet"/>
     {% block stylesheets %}{% endblock %}
     <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}"/>
 </head>
@@ -26,18 +26,19 @@
     </div>
     <div class="row">
         <div class="col-sm-12">
-            <h1>AIS GAME</h1>
+            <h1>Мини игры от АИШ БГУИР</h1>
             {#{% block nav %}{% endblock %}#}
-            {% block body %}{% endblock %}
+
         </div>
     </div>
 </section>
-
+{% block body %}{% endblock %}
 {#{% block javascripts %}#}
 <script src="{{ asset('/bundles/app/vendor/js/jquery-2.1.1.min.js') }}"></script>
 <script src="{{ asset('/bundles/app/vendor/js/bootstrap.js') }}"></script>
 <script src="{{ asset('/bundles/app/vendor/js/material.min.js') }}"></script>
 <script src="{{ asset('/bundles/app/vendor/js/ripples.js') }}"></script>
+<script src="{{ asset('/bundles/IasGame/material-cards/js/jquery.material-cards.min.js') }}"></script>
 <script src="{{ asset('/bundles/app/js/index.js') }}"></script>
 {#{% endblock %}#}
 

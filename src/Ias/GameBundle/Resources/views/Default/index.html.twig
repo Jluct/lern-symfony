@@ -1,6 +1,104 @@
 {% extends 'IasGameBundle::base.html.twig' %}
 
 
+
+
 {% block body %}
-    <h1>Hello world!</h1>
+
+    {#css#}
+    <link href="{{ asset('/bundles/IasGame/material-cards/css/material-cards.css') }}" rel="stylesheet"/>
+    <link href="{{ asset('/bundles/IasGame/material-cards/css/material-cards-auto-height.css') }}" rel="stylesheet"/>
+    <link href="{{ asset('/bundles/IasGame/material-cards/css/font-awesome.min.css') }}" rel="stylesheet"/>
+    {#end css#}
+
+    <section class="container">
+        <div class="row">
+            {% if games %}
+                {% for game in games %}
+                    <div class="col-sm-4">
+                        <article class="material-card Red">
+                            <h2>
+                                <span>{{ game.name }}</span>
+                                <strong>
+                                    <i class="fa fa-fw fa-star"></i>
+                                    TYPE GAME
+                                </strong>
+                            </h2>
+                            <div class="mc-content">
+                                <div class="img-container">
+                                    <img class="img-responsive"
+                                         src="{{ game.image }}">
+                                </div>
+                                <div class="mc-description">
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto autem culpa
+                                    debitis, dolor dolore ea eos esse est eum harum illum impedit ipsum maxime, nihil
+                                    perferendis quasi similique vero, voluptates!
+
+                                </div>
+                            </div>
+                            <a rel="nofollow" class="mc-btn-action">
+                                <i class="fa fa-bars"></i>
+                            </a>
+                            <div class="mc-footer">
+                                {#<h4>#}
+                                {#Social#}
+                                {#</h4>#}
+                                {#<a rel="nofollow" class="fa fa-fw fa-facebook"></a>#}
+                                {#<a rel="nofollow" class="fa fa-fw fa-twitter"></a>#}
+                                {#<a rel="nofollow" class="fa fa-fw fa-linkedin"></a>#}
+                                {#<a rel="nofollow" class="fa fa-fw fa-google-plus"></a>#}
+
+                                <a rel="nofollow" href="#" class="fa fa-fw ">
+
+                                        <span class="glyphicon glyphicon-home" aria-hidden="true"></span>
+
+                                </a>
+                                <a rel="nofollow" href="#" class="fa fa-fw glyphicon glyphicon-plus"></a>
+                            </div>
+                        </article>
+                    </div>
+                {% endfor %}
+            {% endif %}
+        </div>
+    </section>
+
+    {#js#}
+    {#косяк, надо разбираться как подключать в общую кучу#}
+    {#может тут#}
+    {#http://symfony.com/doc/current/assetic.html#}
+    {#<script src="{{ asset('/bundles/IasGame/material-cards/js/jquery.material-cards.min.js') }}"></script>#}
+    {#end js#}
+
 {% endblock %}
+
+
+
+    {#<article class="material-card Red">#}
+    {#<h2>#}
+    {#<span>Christopher Walken</span>#}
+    {#<strong>#}
+    {#<i class="fa fa-fw fa-star"></i>#}
+    {#The Deer Hunter#}
+    {#</strong>#}
+    {#</h2>#}
+    {#<div class="mc-content">#}
+    {#<div class="img-container">#}
+    {#<img class="img-responsive" src="http://u.lorenzoferrara.net/marlenesco/material-card/thumb-christopher-walken.jpg">#}
+    {#</div>#}
+    {#<div class="mc-description">#}
+    {#He has appeared in more than 100 films and television shows, including The Deer Hunter, Annie Hall, The Prophecy trilogy, The Dogs of War ...#}
+    {#</div>#}
+    {#</div>#}
+    {#<a rel="nofollow" class="mc-btn-action">#}
+    {#<i class="fa fa-bars"></i>#}
+    {#</a>#}
+    {#<div class="mc-footer">#}
+    {#<h4>#}
+    {#Social#}
+    {#</h4>#}
+    {#<a rel="nofollow" class="fa fa-fw fa-facebook"></a>#}
+    {#<a rel="nofollow" class="fa fa-fw fa-twitter"></a>#}
+    {#<a rel="nofollow" class="fa fa-fw fa-linkedin"></a>#}
+    {#<a rel="nofollow" class="fa fa-fw fa-google-plus"></a>#}
+    {#</div>#}
+{#</article>#}

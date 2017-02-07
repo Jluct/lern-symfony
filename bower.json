@@ -1,0 +1,17 @@
+{
+  "name": "ias-game",
+  "description": "game for student IAS BSUIR",
+  "main": "",
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "material-cards": "*"
+  }
+}
