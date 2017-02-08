@@ -14,11 +14,16 @@ use Ias\GameBundle\Entity\Game;
 
 class PlayController extends Controller
 {
-    public function initAction($id, $player)
+    public function initAction($id, $players)
     {
-        //$play = $this->get("ias_game.play_service.play"); //Экземпляр сессии
-        //$play->addSesssion(); //Записываем сессию в базу
+        $play = $this->get("ias_game.play_service.play"); //Экземпляр сессии
+        if($id && $play->hasSession($id)){
+
+        }
+         //Записываем сессию в базу
 
         //return $this->render(); //Рендерим объект и возвращаем результат
     }
+    
+    
 }

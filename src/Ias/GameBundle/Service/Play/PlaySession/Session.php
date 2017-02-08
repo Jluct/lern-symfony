@@ -9,40 +9,46 @@
 namespace Ias\GameBundle\Service\PlaySession;
 
 
-use Ias\GameBundle\Service\PlayGame\Game;
+use Ias\GameBundle\Entity\Game;
+use Symfony\Component\DependencyInjection\Container;
 
-class Session
+final class Session
 {
     private static $_session = null;
     private $game = null;
-
-    /**
-     * @return Game $game
-     */
-    public function getGame()
-    {
-        return $this->game;
-    }
-
-    /**
-     * @param Game $game
-     */
-    public function setGame(Game $game)
-    {
-        $this->game = $game;
-    }
 
     private function __constructor()
     {
 
     }
 
-    public static function getSession(Game $game = null)
+    public static function getSession()
     {
         if (empty(self::$_session))
-            self::$_session = new self($game);
+            self::$_session = new self();
 
         return self::$_session;
+    }
+
+    public function openSession($id)
+    {
+        return $id;
+    }
+
+    public function initSession(Game $game)
+    {
+        $this->game = $game;
+        return $game;
+    }
+
+    public function hasSession($id)
+    {
+        return $id == $id;
+    }
+
+    public function deleteSession($id)
+    {
+        return $id;
     }
 
 
