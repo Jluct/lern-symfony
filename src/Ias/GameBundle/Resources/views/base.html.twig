@@ -3,11 +3,17 @@
 <head>
     <meta charset="UTF-8"/>
     <title>{% block title %}AIS GAME!{% endblock %}</title>
-    <link href="{{ asset('/bundles/app/vendor/css/bootstrap.min.css') }}" rel="stylesheet"/>
-    <link href="{{ asset('/bundles/app/vendor/css/bootstrap-material-design.min.css') }}" rel="stylesheet"/>
-    <link href="{{ asset('/bundles/app/vendor/css/ripples.css') }}" rel="stylesheet"/>
-    <link href="{{ asset('/bundles/app/css/blog.css') }}" rel="stylesheet"/>
-    {% block stylesheets %}{% endblock %}
+
+    {% block stylesheets %}
+        <link href="{{ asset('/bundles/iasgame/vendor/css/bootstrap.min.css') }}" rel="stylesheet"/>
+        <link href="{{ asset('/bundles/iasgame/vendor/css/bootstrap-material-design.min.css') }}" rel="stylesheet"/>
+        <link href="{{ asset('/bundles/iasgame/vendor/css/ripples.css') }}" rel="stylesheet"/>
+    {% endblock %}
+
+    {% block page_stylesheets %}
+
+        <link href="{{ asset('/bundles/iasgame/css/style.css') }}" rel="stylesheet"/>
+    {% endblock %}
     <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}"/>
 </head>
 <body>
@@ -19,7 +25,11 @@
         <div class="col-sm-12">
             {% for flash_message in app.session.flashBag.get('notice') %}
                 <div class="flash-notice">
-                    {{ flash_message }}
+
+                </div>
+                <div class="alert alert-warning alert-dismissible" role="alert">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <strong>Warning!</strong> {{ flash_message }}
                 </div>
             {% endfor %}
         </div>
@@ -34,13 +44,13 @@
 </section>
 {% block body %}{% endblock %}
 {#{% block javascripts %}#}
-<script src="{{ asset('/bundles/app/vendor/js/jquery-2.1.1.min.js') }}"></script>
-<script src="{{ asset('/bundles/app/vendor/js/bootstrap.js') }}"></script>
-<script src="{{ asset('/bundles/app/vendor/js/material.min.js') }}"></script>
-<script src="{{ asset('/bundles/app/vendor/js/ripples.js') }}"></script>
-<script src="{{ asset('/bundles/IasGame/material-cards/js/jquery.material-cards.min.js') }}"></script>
-<script src="{{ asset('/bundles/app/js/index.js') }}"></script>
-{#{% endblock %}#}
+{% block javascript %}
+    <script src="{{ asset('/bundles/iasgame/vendor/js/jquery-2.1.1.min.js') }}"></script>
+    <script src="{{ asset('/bundles/iasgame/vendor/js/bootstrap.js') }}"></script>
+    <script src="{{ asset('/bundles/iasgame/vendor/js/material.min.js') }}"></script>
+    <script src="{{ asset('/bundles/iasgame/vendor/js/ripples.js') }}"></script>
+    <script src="{{ asset('/bundles/iasgame/js/index.js') }}"></script>
+{% endblock %}
 
 </body>
 </html>

@@ -1,4 +1,13 @@
 services:
-#    ias_game.example:
-#        class: Ias\GameBundle\Example
-#        arguments: ["@service_id", "plain_value", "%parameter%"]
+#    ias_game.example: Название
+#        class: Ias\GameBundle\Example Путь к классу по PSR
+#        arguments: ["@service_id", "plain_value", "%parameter%"] параметры конструктора
+
+    ias.ias_game.play.play_session:
+        class: Ias\GameBundle\Service\Play\PlaySession\Session
+        factory: ['Ias\GameBundle\Service\Play\PlaySession\Session', getSession]
+        arguments: ["@ias.ias_game.play.play_game"]
+
+    as.ias_game.play.play_game:
+        class: Ias\GameBundle\Service\Play\PlayGame\Game
+        arguments: ["%game_id%"]
