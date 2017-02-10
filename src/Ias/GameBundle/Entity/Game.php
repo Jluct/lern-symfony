@@ -50,6 +50,52 @@ class Game
     private $image;
 
     /**
+     * @var string
+     *
+     * @ORM\Column(name="description", type="text")
+     */
+    private $description;
+
+    /**
+     * @return string
+     */
+    public function getDescription()
+    {
+        return $this->description;
+    }
+
+    /**
+     * @param string $description
+     */
+    public function setDescription($description)
+    {
+        $this->description = $description;
+    }
+
+    /**
+     * @return string
+     */
+    public function getTypeData()
+    {
+        return $this->typeData;
+    }
+
+    /**
+     * @param string $typeData
+     */
+    public function setTypeData($typeData)
+    {
+        $this->typeData = $typeData;
+    }
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="typeData", type="string", length="255", nullable=false)
+     */
+    private $typeData;
+
+    /**
      * Get image
      *
      * @return string

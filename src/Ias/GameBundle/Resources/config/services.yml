@@ -6,7 +6,7 @@ services:
     ias.ias_game.play.play_session.session:
         class: Ias\GameBundle\Service\Play\PlaySession\Session
         factory: ['Ias\GameBundle\Service\Play\PlaySession\Session', getSession]
-#        arguments: ["@ias.ias_game.play.play_game"]
+        arguments: ["@doctrine.orm.entity_manager"]
 
 #    as.ias_game.play.play_game:
 #        class: Ias\GameBundle\Service\Play\PlayGame\Game
