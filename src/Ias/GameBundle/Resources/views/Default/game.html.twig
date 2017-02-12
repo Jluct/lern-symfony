@@ -1,4 +1,24 @@
-{% extends '../layot' %}
+{% extends 'IasGameBundle::base.html.twig' %}
 {% block body %}
-    <h1>NOT HELLO WORLD!</h1>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-2"></div>
+            <div class="col-sm-12">
+                <?php var_?>
+                <table class="table table-striped">
+                    {% for item in game_session %}
+                        <tr>
+                            <td>{{ game_session.game.name }}</td>
+                            <td>game_session.gamer.login</td>
+                            <td>game_session.created</td>
+                            <td>
+                                <button class="btn btn-info">Записаться</button>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </table>
+            </div>
+            <div class="col-sm-2"></div>
+        </div>
+    </div>
 {% endblock %}

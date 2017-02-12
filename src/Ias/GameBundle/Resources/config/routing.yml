@@ -2,8 +2,7 @@ ias_game_homepage:
     path:     /game
     defaults: { _controller: IasGameBundle:Default:index}
 
-ias_game_get_game:
-    path:     /game/{id}
+
+ias_game_get_game_session:
+    path:     /inquiry
     defaults: { _controller: IasGameBundle:Default:getGame}
-    requirements:
-        id: '\d+'

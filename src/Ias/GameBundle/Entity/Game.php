@@ -2,6 +2,7 @@
 
 namespace Ias\GameBundle\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -45,7 +46,7 @@ class Game
     /**
      * @var string
      *
-     * @ORM\Column(name="image", type="string", length=255, unique=false)
+     * @ORM\Column(name="image", type="string", length=255)
      */
     private $image;
 
@@ -57,62 +58,13 @@ class Game
     private $description;
 
     /**
-     * @return string
+     * @ORM\OneToMany(targetEntity="GameSession", mappedBy="game")
      */
-    public function getDescription()
-    {
-        return $this->description;
-    }
+    private $gameSession;
 
-    /**
-     * @param string $description
-     */
-    public function setDescription($description)
+    public function __construct()
     {
-        $this->description = $description;
-    }
-
-    /**
-     * @return string
-     */
-    public function getTypeData()
-    {
-        return $this->typeData;
-    }
-
-    /**
-     * @param string $typeData
-     */
-    public function setTypeData($typeData)
-    {
-        $this->typeData = $typeData;
-    }
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="typeData", type="string", length="255", nullable=false)
-     */
-    private $typeData;
-
-    /**
-     * Get image
-     *
-     * @return string
-     */
-    public function getImage()
-    {
-        return $this->image;
-    }
-
-    /**
-     * Set image
-     *
-     * @param string $image
-     */
-    public function setImage($image)
-    {
-        $this->image = $image;
+        $this->gameSession = new ArrayCollection();
     }
 
     /**
@@ -195,5 +147,87 @@ class Game
     public function getMaxCountPlayers()
     {
         return $this->maxCountPlayers;
+    }
+
+    /**
+     * Set image
+     *
+     * @param string $image
+     *
+     * @return Game
+     */
+    public function setImage($image)
+    {
+        $this->image = $image;
+
+        return $this;
+    }
+
+    /**
+     * Get image
+     *
+     * @return string
+     */
+    public function getImage()
+    {
+        return $this->image;
+    }
+
+    /**
+     * Set description
+     *
+     * @param string $description
+     *
+     * @return Game
+     */
+    public function setDescription($description)
+    {
+        $this->description = $description;
+
+        return $this;
+    }
+
+    /**
+     * Get description
+     *
+     * @return string
+     */
+    public function getDescription()
+    {
+        return $this->description;
+    }
+
+    /**
+     * Add gameSession
+     *
+     * @param \Ias\GameBundle\Entity\GameSession $gameSession
+     *
+     * @return Game
+     */
+    public function addGameSession(\Ias\GameBundle\Entity\GameSession $gameSession)
+    {
+        $this->gameSession[] = $gameSession;
+
+        return $this;
+    }
+
+    /**
+     * Remove gameSession
+     *
+     * @param \Ias\GameBundle\Entity\GameSession $gameSession
+     */
+    public function removeGameSession(\Ias\GameBundle\Entity\GameSession $gameSession)
+    {
+        $this->gameSession->removeElement($gameSession);
+    }
+
+    /**
+     * Get gameSession
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getGameSession()
+    {
+        return $this->gameSession;
     }
 }

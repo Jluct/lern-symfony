@@ -2,6 +2,7 @@
 
 namespace Ias\GameBundle\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -42,6 +43,29 @@ class Game
      */
     private $maxCountPlayers;
 
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="image", type="string", length=255)
+     */
+    private $image;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="description", type="text")
+     */
+    private $description;
+
+    /**
+     * @ORM\OneToMany(targetEntity="GameSession", mappedBy="game")
+     */
+    private $gameSession;
+
+    public function __construct()
+    {
+        $this->gameSession = new ArrayCollection();
+    }
 
     /**
      * Get id
@@ -124,4 +148,53 @@ class Game
     {
         return $this->maxCountPlayers;
     }
+
+    /**
+     * Set image
+     *
+     * @param string $image
+     *
+     * @return Game
+     */
+    public function setImage($image)
+    {
+        $this->image = $image;
+
+        return $this;
+    }
+
+    /**
+     * Get image
+     *
+     * @return string
+     */
+    public function getImage()
+    {
+        return $this->image;
+    }
+
+    /**
+     * Set description
+     *
+     * @param string $description
+     *
+     * @return Game
+     */
+    public function setDescription($description)
+    {
+        $this->description = $description;
+
+        return $this;
+    }
+
+    /**
+     * Get description
+     *
+     * @return string
+     */
+    public function getDescription()
+    {
+        return $this->description;
+    }
 }
+

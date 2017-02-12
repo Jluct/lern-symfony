@@ -63,3 +63,4 @@ class Gamer
         return $this->login;
     }
 }
+

@@ -68,28 +68,5 @@ class GameSession
     {
         return $this->created;
     }
-
-    /**
-     * Set game
-     *
-     * @param \Ias\GameBundle\Entity\Game $game
-     *
-     * @return GameSession
-     */
-    public function setGame(\Ias\GameBundle\Entity\Game $game = null)
-    {
-        $this->game = $game;
-
-        return $this;
-    }
-
-    /**
-     * Get game
-     *
-     * @return \Ias\GameBundle\Entity\Game
-     */
-    public function getGame()
-    {
-        return $this->game;
-    }
 }
+

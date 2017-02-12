@@ -3,9 +3,10 @@
 {% block page_stylesheets %}
     {{ parent() }}
 
+
+    <link href="{{ asset('/bundles/iasgame/vendor/material-cards/css/material-cards.css') }}" rel="stylesheet"/>
     <link href="{{ asset('/bundles/iasgame/vendor/material-cards/css/material-cards-auto-height.css') }}"
           rel="stylesheet"/>
-    <link href="{{ asset('/bundles/iasgame/vendor/material-cards/css/material-cards.css') }}" rel="stylesheet"/>
     <link href="{{ asset('/bundles/iasgame/vendor/material-cards/css/font-awesome.min.css') }}" rel="stylesheet"/>
 {% endblock %}
 
@@ -31,11 +32,16 @@
                                              src="{{ game.image }}">
                                     </div>
                                     <div class="mc-description">
-                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto autem culpa
-                                        debitis, dolor dolore ea eos esse est eum harum illum impedit ipsum maxime,
-                                        nihil
-                                        perferendis quasi similique vero, voluptates!
-
+                                        <div>
+                                            {{ game.description }}
+                                        </div>
+                                        <div>
+                                            {% if game.getGameSession() == true %}
+                                                {% for item in game.getGameSession() %}
+                                                    {{ item.getId() }}
+                                                {% endfor %}
+                                            {% endif %}
+                                        </div>
                                     </div>
                                 </div>
                                 <a rel="nofollow" class="mc-btn-action">
