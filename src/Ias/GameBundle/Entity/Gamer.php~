@@ -28,6 +28,13 @@ class Gamer
      */
     private $login;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="GameSession", inversedBy="gamer")
+     * @ORM\JoinColumn(name="gameSession_id", referencedColumnName="id")
+     */
+    private $gameSession;
+
+    
 
     /**
      * Get id
@@ -63,4 +70,3 @@ class Gamer
         return $this->login;
     }
 }
-

@@ -94,4 +94,3 @@ class PlaySession
         return $this->created;
     }
 }
-

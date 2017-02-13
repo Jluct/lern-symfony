@@ -196,5 +196,38 @@ class Game
     {
         return $this->description;
     }
-}
 
+    /**
+     * Add gameSession
+     *
+     * @param \Ias\GameBundle\Entity\GameSession $gameSession
+     *
+     * @return Game
+     */
+    public function addGameSession(\Ias\GameBundle\Entity\GameSession $gameSession)
+    {
+        $this->gameSession[] = $gameSession;
+
+        return $this;
+    }
+
+    /**
+     * Remove gameSession
+     *
+     * @param \Ias\GameBundle\Entity\GameSession $gameSession
+     */
+    public function removeGameSession(\Ias\GameBundle\Entity\GameSession $gameSession)
+    {
+        $this->gameSession->removeElement($gameSession);
+    }
+
+    /**
+     * Get gameSession
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getGameSession()
+    {
+        return $this->gameSession;
+    }
+}

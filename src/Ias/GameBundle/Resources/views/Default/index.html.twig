@@ -39,6 +39,9 @@
                                             {% if game.getGameSession() == true %}
                                                 {% for item in game.getGameSession() %}
                                                     {{ item.getId() }}
+                                                    {% for gamer in item.getGamer() %}
+                                                        {{ gamer.getLogin() }}
+                                                    {% endfor %}
                                                 {% endfor %}
                                             {% endif %}
                                         </div>
@@ -70,12 +73,6 @@
             </div>
         </section>
 
-        {#js#}
-        {#косяк, надо разбираться как подключать в общую кучу#}
-        {#может тут#}
-        {#http://symfony.com/doc/current/assetic.html#}
-        {# <script src="{{ asset('/bundles/iasgame/material-cards/js/jquery.material-cards.min.js') }}"></script>#}
-        {#end js#}
 
     {% endblock %}
 

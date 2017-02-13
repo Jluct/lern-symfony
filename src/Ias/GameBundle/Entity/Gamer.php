@@ -28,6 +28,13 @@ class Gamer
      */
     private $login;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="GameSession", inversedBy="gamer")
+     * @ORM\JoinColumn(name="gameSession_id", referencedColumnName="id")
+     */
+    private $gameSession;
+
+    
 
     /**
      * Get id
@@ -61,5 +68,29 @@ class Gamer
     public function getLogin()
     {
         return $this->login;
+    }
+
+    /**
+     * Set gameSession
+     *
+     * @param \Ias\GameBundle\Entity\GameSession $gameSession
+     *
+     * @return Gamer
+     */
+    public function setGameSession(\Ias\GameBundle\Entity\GameSession $gameSession = null)
+    {
+        $this->gameSession = $gameSession;
+
+        return $this;
+    }
+
+    /**
+     * Get gameSession
+     *
+     * @return \Ias\GameBundle\Entity\GameSession
+     */
+    public function getGameSession()
+    {
+        return $this->gameSession;
     }
 }

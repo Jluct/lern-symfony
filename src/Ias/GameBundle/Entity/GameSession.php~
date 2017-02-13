@@ -2,6 +2,7 @@
 
 namespace Ias\GameBundle\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -33,6 +34,16 @@ class GameSession
      * @ORM\JoinColumn(name="game_id", referencedColumnName="id")
      */
     private $game;
+
+    /**
+     * @ORM\OneToMany(targetEntity="Gamer", mappedBy="gameSession")
+     */
+    private $gamer;
+
+    public function __construct()
+    {
+        $this->gamer = new ArrayCollection();
+    }
 
 
     /**
@@ -68,5 +79,28 @@ class GameSession
     {
         return $this->created;
     }
-}
 
+    /**
+     * Set game
+     *
+     * @param \Ias\GameBundle\Entity\Game $game
+     *
+     * @return GameSession
+     */
+    public function setGame(\Ias\GameBundle\Entity\Game $game = null)
+    {
+        $this->game = $game;
+
+        return $this;
+    }
+
+    /**
+     * Get game
+     *
+     * @return \Ias\GameBundle\Entity\Game
+     */
+    public function getGame()
+    {
+        return $this->game;
+    }
+}
