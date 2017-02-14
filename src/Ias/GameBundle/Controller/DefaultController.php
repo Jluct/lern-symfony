@@ -16,8 +16,7 @@ class DefaultController extends Controller
 
     public function getGameAction()
     {
-        $game_session = $this->getDoctrine()->getRepository('IasGameBundle:Gamer')->findAll();
-        var_dump($game_session);die;
+        $game_session = $this->getDoctrine()->getRepository('IasGameBundle:GameSession')->findAll();
 
         return $this->render('IasGameBundle:Default:game.html.twig',['game_session'=>$game_session]);
 

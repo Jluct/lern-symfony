@@ -37,13 +37,17 @@
                                         </div>
                                         <div>
                                             {% if game.getGameSession() == true %}
-                                                {% for item in game.getGameSession() %}
-                                                    {{ item.getId() }}
-                                                    {% for gamer in item.getGamer() %}
-                                                        {{ gamer.getLogin() }}
-                                                    {% endfor %}
-                                                {% endfor %}
+                                                {{ game.getGameSession()|length }}
                                             {% endif %}
+                                            {# Работает #}
+                                            {#{% if game.getGameSession() == true %}#}
+                                            {#{% for item in game.getGameSession() %}#}
+                                            {#{{ item.getId() }}#}
+                                            {#{% for gamer in item.getGamer() %}#}
+                                            {#{{ gamer.getLogin() }}#}
+                                            {#{% endfor %}#}
+                                            {#{% endfor %}#}
+                                            {#{% endif %}#}
                                         </div>
                                     </div>
                                 </div>

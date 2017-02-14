@@ -46,6 +46,16 @@ class GameSession
     }
 
 
+    public function getCountGameSession()
+    {
+        
+    }
+
+    /********************
+    ** Гетеры и сетеры***
+    ********************/
+
+
     /**
      * Get id
      *
