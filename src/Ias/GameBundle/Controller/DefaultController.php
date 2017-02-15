@@ -3,11 +3,8 @@
 namespace Ias\GameBundle\Controller;
 
 use Ias\GameBundle\Entity\Task;
+use Ias\GameBundle\Form\TaskType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
-use Symfony\Component\Form\Extension\Core\Type\SubmitType;
-use Symfony\Component\Form\Extension\Core\Type\TextType;
-use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\HttpFoundation\Request;
 
 
@@ -39,31 +36,7 @@ class DefaultController extends Controller
         $task->setDueDate(new \DateTime('tomorrow'));
         $task->setDescription('');
 
-        $form = $this->createFormBuilder($task)
-            ->add('task', TextType::class, [
-                'attr' => [
-                    'class' => 'form-control'
-                ]
-            ])
-            ->add('dueDate', DateTimeType::class, [
-                'attr' => [
-                    'class' => 'form-control'
-                ]
-            ])
-            ->add('description', TextareaType::class, [
-                'attr' => [
-                    'class' => 'form-control',
-                    'rows' => 6,
-                    'placeholder' => "This yor comment"
-                ]
-            ])
-            ->add('save', SubmitType::class, [
-                'label' => 'Создать запись',
-                'attr' => [
-                    'class' => 'btn btn-success'
-                ]
-            ])
-            ->getForm();
+        $form = $this->createForm(TaskType::class, $task);
 
         $form->handleRequest($request);
 
