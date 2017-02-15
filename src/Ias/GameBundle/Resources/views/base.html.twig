@@ -11,9 +11,9 @@
     {% endblock %}
 
     {% block page_stylesheets %}
-
         <link href="{{ asset('/bundles/iasgame/css/style.css') }}" rel="stylesheet"/>
     {% endblock %}
+
     <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}"/>
 </head>
 <body>
@@ -23,15 +23,14 @@
 <section class="container">
     <div class="row">
         <div class="col-sm-12">
-            {% for flash_message in app.session.flashBag.get('notice') %}
-                <div class="flash-notice">
 
-                </div>
-                <div class="alert alert-warning alert-dismissible" role="alert">
+            {% for flash_message in app.session.flashBag.get('notice') %}
+                <div class="alert alert-success alert-dismissible" role="alert">
                     <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <strong>Warning!</strong> {{ flash_message }}
+                    <strong>Attention!</strong> {{ flash_message }}
                 </div>
             {% endfor %}
+
         </div>
     </div>
     <div class="row">

@@ -43,6 +43,7 @@ class GameSession
     public function __construct()
     {
         $this->gamer = new ArrayCollection();
+        $this->created = new \DateTime();
     }
 
 

@@ -7,21 +7,22 @@
 
 {% block body %}
     <div class="container">
+
         <div class="row">
             <div class="col-sm-2"></div>
-            <div class="col-sm-12">
+            <div class="col-sm-8">
 
                 {% for item in game_session %}
 
-                    <h3>{{ item.game.name }}</h3>
+                    <h3>{{ item.name }}</h3>
 
                     <table class="table table-striped game_session">
-                        {% for gamer in item.gamer %}
+                        {% for game in item.getGameSession() %}
                             <tr>
-                                <td>{{ gamer.login }}</td>
-                                <td>{{ item.created|date('Y-m-d H:i:s') }}</td>
+                                {#<td>{{ game.getGamer().getLogin }}</td>#}
+                                <td>{{ game.created|date('Y-m-d H:i:s') }}</td>
                                 <td>
-                                    <button class="btn btn-info">Присоединиться</button>
+                                    <a role="button" href="#{{ game.id }}" class="btn btn-info">Присоединиться</a>
                                 </td>
                             </tr>
                         {% endfor %}

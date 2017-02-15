@@ -43,7 +43,18 @@ class GameSession
     public function __construct()
     {
         $this->gamer = new ArrayCollection();
+        $this->created = new \DateTime();
     }
+
+
+    public function getCountGameSession()
+    {
+        
+    }
+
+    /********************
+    ** Гетеры и сетеры***
+    ********************/
 
 
     /**
@@ -102,5 +113,39 @@ class GameSession
     public function getGame()
     {
         return $this->game;
+    }
+
+    /**
+     * Add gamer
+     *
+     * @param \Ias\GameBundle\Entity\Gamer $gamer
+     *
+     * @return GameSession
+     */
+    public function addGamer(\Ias\GameBundle\Entity\Gamer $gamer)
+    {
+        $this->gamer[] = $gamer;
+
+        return $this;
+    }
+
+    /**
+     * Remove gamer
+     *
+     * @param \Ias\GameBundle\Entity\Gamer $gamer
+     */
+    public function removeGamer(\Ias\GameBundle\Entity\Gamer $gamer)
+    {
+        $this->gamer->removeElement($gamer);
+    }
+
+    /**
+     * Get gamer
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getGamer()
+    {
+        return $this->gamer;
     }
 }

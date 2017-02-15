@@ -10,4 +10,19 @@ namespace Ias\GameBundle\Repository;
  */
 class GameRepository extends \Doctrine\ORM\EntityRepository
 {
+    public function getActiveGameSession()
+    {
+
+        $query = $this->getEntityManager()
+            ->createQuery('SELECT p, c, d FROM IasGameBundle:Game p
+                            JOIN p.gameSession c
+                            JOIN c.gamer d
+                            ORDER BY p.name');
+
+        try {
+            return $query->getResult();
+        } catch (\Doctrine\ORM\NoResultException $e) {
+            return null;
+        }
+    }
 }

@@ -6,3 +6,7 @@ ias_game_homepage:
 ias_game_get_game_session:
     path:     /inquiry
     defaults: { _controller: IasGameBundle:Default:getGame}
+
+ias_game_example:
+     path:     /example
+     defaults: { _controller: IasGameBundle:Default:example}
