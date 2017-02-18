@@ -20,12 +20,16 @@ class Task
 
     /**
      * @Assert\NotBlank()
+     * @Assert\Length(min=3)
      */
     protected $description;
 
     /**
      * @Assert\NotBlank()
      * @Assert\Type("\DateTime")
+     * @Assert\DateTime(
+     *     format="d-m-Y H:i:s"
+     * )
      */
     protected $dueDate;
 

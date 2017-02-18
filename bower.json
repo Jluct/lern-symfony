@@ -12,6 +12,7 @@
     "tests"
   ],
   "dependencies": {
-    "material-cards": "*"
+    "material-cards": "*",
+    "eonasdan-bootstrap-datetimepicker": "^4.17.45"
   }
 }

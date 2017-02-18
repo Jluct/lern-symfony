@@ -44,7 +44,7 @@ class DefaultController extends Controller
             // $form->getData() holds the submitted values
             // but, the original `$task` variable has also been updated
             $task = $form->getData();
-
+            var_dump($task);
             $this->addFlash(
                 'notice',
                 'Your changes were saved!'

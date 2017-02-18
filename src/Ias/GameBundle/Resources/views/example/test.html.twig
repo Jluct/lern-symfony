@@ -1,5 +1,10 @@
 {% extends 'IasGameBundle::base.html.twig' %}
 
+{% block page_stylesheets %}
+    {{ parent() }}
+    <link href="{{ asset('/bundles/iasgame/vendor/bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css') }}" rel="stylesheet"/>
+{% endblock %}
+
 {% block body %}
 <div class="container">
     <div class="row">
@@ -10,4 +15,12 @@
         </div>
     </div>
 </div>
+{% endblock %}
+
+{% block javascript %}
+    {{ parent() }}
+    <script src="{{ asset('/bundles/iasgame/vendor/moment/js/moment.min.js') }}"></script>
+    <script src="{{ asset('/bundles/iasgame/vendor/moment/js/locales.min.js') }}"></script>
+    <script src="{{ asset('/bundles/iasgame/vendor/bootstrap-datetimepicker/js/bootstrap-datetimepicker.min.js') }}"></script>
+    <script src="{{ asset('/bundles/iasgame/js/example.js') }}"></script>
 {% endblock %}
