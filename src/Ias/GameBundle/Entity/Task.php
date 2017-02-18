@@ -8,7 +8,8 @@
 
 namespace Ias\GameBundle\Entity;
 
-use Doctrine\ORM\Mapping as ORM;
+
+
 use Symfony\Component\Validator\Constraints as Assert;
 
 class Task
@@ -32,6 +33,22 @@ class Task
      * )
      */
     protected $dueDate;
+
+    /**
+     * @Assert\Type(type="Ias\GameBundle\Entity\Category")
+     * @Assert\Valid()
+     */
+    protected $category;
+
+    public function getCategory()
+    {
+        return $this->category;
+    }
+
+    public function setCategory(Category $category = null)
+    {
+        $this->category = $category;
+    }
 
     public function getTask()
     {

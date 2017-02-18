@@ -31,7 +31,7 @@ class TaskType extends AbstractType
             ->add('dueDate', TextType::class, [
                 'attr' => [
                     'class' => 'form-control',
-                    'id'=>'datetime-piker'
+                    'id' => 'datetime-piker'
 
                 ],
 
@@ -43,12 +43,18 @@ class TaskType extends AbstractType
                     'placeholder' => "This yor comment"
                 ]
             ])
+            /**
+             * Присоединили поле из другой формы. Настройка поля соответственно в другой форме
+             */
+//            ->add('category', CategoryType::class)
+            ->add('category', CategoryType::class)
             ->add('save', SubmitType::class, [
                 'label' => 'Создать запись',
                 'attr' => [
                     'class' => 'btn btn-success btn-raised'
                 ]
-            ]);
+            ])
+        ;
 
         $builder->get('dueDate')->addModelTransformer(new CallbackTransformer(
             function ($convertDateAsString) {
