@@ -6,6 +6,7 @@ use Ias\GameBundle\Entity\Task;
 use Ias\GameBundle\Form\TaskType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
+use Ias\GameBundle\Entity\Tag;
 
 
 class DefaultController extends Controller
@@ -35,6 +36,13 @@ class DefaultController extends Controller
         $task->setTask('Example 1');
         $task->setDueDate(new \DateTime('tomorrow'));
         $task->setDescription('');
+
+        $tag1 = new Tag();
+        $tag1->setName('tag1');
+        $task->getTags()->add($tag1);
+        $tag2 = new Tag();
+        $tag2->setName('tag2');
+        $task->getTags()->add($tag2);
 
         $form = $this->createForm(TaskType::class, $task);
 

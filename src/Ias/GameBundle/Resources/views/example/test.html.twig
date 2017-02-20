@@ -11,6 +11,19 @@
         <div class="col-sm-12">
             {{ form_start(form) }}
             {{ form_widget(form) }}
+            {#{{ form_row(form.task.name) }}#}
+            {#{{ form_row(form.task.duoDate) }}#}
+            {#{{ form_row(form.task.description) }}#}
+            {#{{ form_row(form.task.category.name) }}#}
+            {#<h3>Tags</h3>#}
+            {#<ul class="tags">#}
+                {#{% for tag in form.task.tags %}#}
+                    {#<li>{{ form_row(tag.name) }}</li>#}
+                {#{% endfor %}#}
+            {#</ul>#}
+
+            {#<input type="submit" class="btn btn-success btn-raised" value="Создать запись">#}
+
             {{ form_end(form) }}
         </div>
     </div>

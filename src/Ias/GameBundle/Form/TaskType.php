@@ -17,6 +17,7 @@ use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\CollectionType;
 
 class TaskType extends AbstractType
 {
@@ -46,28 +47,24 @@ class TaskType extends AbstractType
             /**
              * Присоединили поле из другой формы. Настройка поля соответственно в другой форме
              */
-//            ->add('category', CategoryType::class)
             ->add('category', CategoryType::class)
-            ->add('save', SubmitType::class, [
-                'label' => 'Создать запись',
-                'attr' => [
-                    'class' => 'btn btn-success btn-raised'
-                ]
-            ])
-        ;
+            ->add('tags', CollectionType::class, array(
+                'entry_type' => TagType::class,
+                'allow_add' => true, // Позволяет добавлять неизвестное число тэгов
+            ));
+//            ->add('save', SubmitType::class, [
+//                'label' => 'Создать запись',
+//                'attr' => [
+//                    'class' => 'btn btn-success btn-raised'
+//                ]
+//            ]);
 
         $builder->get('dueDate')->addModelTransformer(new CallbackTransformer(
             function ($convertDateAsString) {
-//                echo ($convertDateAsString);die;
                 return $convertDateAsString->format("d-m-Y H:i:s");
-
             },
             function ($convertDateAsRussianType) {
-
-//                var_dump($convertDateAsRussianType);die;
                 return new \DateTime($convertDateAsRussianType);
-//                return date("Y-m-d H:i:s", strtotime($convertDateAsRussianType));
-//                return $convertDateAsRussianType->format("d-m-Y H:i:s");
             }
         ));
     }

@@ -10,6 +10,7 @@ namespace Ias\GameBundle\Entity;
 
 
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Symfony\Component\Validator\Constraints as Assert;
 
 class Task
@@ -39,6 +40,22 @@ class Task
      * @Assert\Valid()
      */
     protected $category;
+
+    protected $tags;
+
+
+    public function __construct()
+    {
+        $this->tags = new ArrayCollection();
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getTags()
+    {
+        return $this->tags;
+    }
 
     public function getCategory()
     {
