@@ -9,9 +9,14 @@
 <div class="container">
     <div class="row">
         <div class="col-sm-12">
+
+            {% for tag in form. %}
+            <div>{{ tag }}</div>
+            {% endfor %}
+
             {{ form_start(form) }}
             {{ form_widget(form) }}
-            {#{{ form_row(form.task.name) }}#}
+            {#{{ form_row(form.name) }}#}
             {#{{ form_row(form.task.duoDate) }}#}
             {#{{ form_row(form.task.description) }}#}
             {#{{ form_row(form.task.category.name) }}#}
@@ -22,7 +27,7 @@
                 {#{% endfor %}#}
             {#</ul>#}
 
-            {#<input type="submit" class="btn btn-success btn-raised" value="Создать запись">#}
+            <input type="submit" class="btn btn-success btn-raised" value="Создать запись">
 
             {{ form_end(form) }}
         </div>

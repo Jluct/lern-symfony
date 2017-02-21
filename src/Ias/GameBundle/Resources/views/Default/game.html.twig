@@ -20,7 +20,8 @@
                         {% for game in item.getGameSession() %}
                             <tr>
                                 {#<td>{{ game.getGamer().getLogin }}</td>#}
-                                <td>{{ game.created|date('Y-m-d H:i:s') }}</td>
+                                <td>{{ game.created|date('d-m-Y H:i:s') }}</td>
+                                <td>{{ game|length }}</td>
                                 <td>
                                     <a role="button" href="#{{ game.id }}" class="btn btn-info">Присоединиться</a>
                                 </td>
