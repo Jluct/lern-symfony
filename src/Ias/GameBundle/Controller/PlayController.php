@@ -10,19 +10,29 @@ namespace Ias\GameBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Ias\GameBundle\Entity\Game;
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 
 
 class PlayController extends Controller
 {
-    public function initAction($id, $players)
+    /**
+     * Инициализация игровой сессии. Создание заявки на поиск оппонента
+     * @param Request $request
+     */
+    public function initGameSessionAction(Request $request)
     {
-        $play = $this->get("ias_game.play_service.play"); //Экземпляр сессии
-        if($id && $play->hasSession($id)){
 
-        }
-         //Записываем сессию в базу
+    }
 
-        //return $this->render(); //Рендерим объект и возвращаем результат
+    /**
+     * Присоединяемся к заявке и создаём сессию матча
+     * @param integer $id
+     */
+    public function joinGameSessionAction($id)
+    {
+        return new Response($id);
+
     }
     
     

@@ -14,11 +14,18 @@ class GameRepository extends \Doctrine\ORM\EntityRepository
     public function getActiveGameSession()
     {
 
-        $query = $this->getEntityManager()
-            ->createQuery('SELECT p, c, d FROM IasGameBundle:Game p
-                            JOIN p.gameSession c
-                            JOIN c.gamer d
-                            ORDER BY p.name');
+//        $query = $this->getEntityManager()
+//            ->createQuery('SELECT p, c, d FROM IasGameBundle:Game p
+//                            JOIN p.gameSession c
+//                            JOIN c.gamer d
+//                            ORDER BY p.name');
+
+        $query = $this->getEntityManager()->createQueryBuilder()
+            ->select('g,s,u')->from('IasGameBundle:Game', 'g')
+            ->leftJoin('g.gameSession', 's')
+            ->leftJoin('s.gamer', 'u')
+            ->getQuery()
+        ;
 
         try {
             return $query->getResult();

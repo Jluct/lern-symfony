@@ -29,11 +29,14 @@ class DefaultController extends Controller
         $game_session = $game_repository->getActiveGameSession();
 
         $game = $game_repository->getAllGameInBase();
-//        VarDumper::dump($game);
+        VarDumper::dump($game_session);
 
-        $gameForm = $this->createForm(GameListType::class,$game);
+        $gameForm = $this->createForm(GameListType::class, $game, [
+            'action' => $this->generateUrl('ias_game_init_game_session'),
+            'method' => 'POST'
+        ]);
 
-        return $this->render('IasGameBundle:Default:game.html.twig', ['game_session' => $game_session,'gameForm'=>$gameForm->createView()]);
+        return $this->render('IasGameBundle:Default:game.html.twig', ['game_session' => $game_session, 'gameForm' => $gameForm->createView()]);
 
     }
 

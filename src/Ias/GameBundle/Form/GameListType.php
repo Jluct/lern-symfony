@@ -21,19 +21,21 @@ class GameListType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        VarDumper::dump($options);
-        $builder->add('Game', ChoiceType::class, [
-            'choices' => [
-                $options['data']
-            ],
-            'choice_label' => function (Game $game, $key, $index) {
-                /** @var Game $game */
-                return $game->getName();
-            },
-            'group_by' => function ($category, $key, $index) {
+//        VarDumper::dump($options);
 
-            },
-        ]);
+        $builder
+            ->add('Game', ChoiceType::class, [
+                'choices' => [
+                    $options['data']
+                ],
+                'choice_label' => function (Game $game, $key, $index) {
+                    /** @var Game $game */
+                    return $game->getName();
+                },
+                'group_by' => function ($category, $key, $index) {
+
+                },
+            ]);
 
 
     }
