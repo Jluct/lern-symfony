@@ -7,6 +7,16 @@
 
 {% block body %}
     <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                {{ form_start(gameForm) }}
+                {{ form_widget(gameForm) }}
+
+                <input type="submit" value="Создать заявку" class="btn btn-primary btn-raised">
+                {{ form_end(gameForm) }}
+
+            </div>
+        </div>
 
         <div class="row">
             <div class="col-sm-2"></div>

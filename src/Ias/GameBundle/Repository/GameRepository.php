@@ -2,6 +2,7 @@
 
 namespace Ias\GameBundle\Repository;
 
+use Ias\GameBundle\Entity\Game;
 /**
  * GameRepository
  *
@@ -21,6 +22,18 @@ class GameRepository extends \Doctrine\ORM\EntityRepository
 
         try {
             return $query->getResult();
+        } catch (\Doctrine\ORM\NoResultException $e) {
+            return null;
+        }
+    }
+
+    public function getAllGameInBase()
+    {
+        $db = $this->getEntityManager()->createQueryBuilder()->select('g')->from('IasGameBundle:Game', 'g');
+        $request = $db->getQuery();
+        
+        try {
+            return $request->execute();
         } catch (\Doctrine\ORM\NoResultException $e) {
             return null;
         }

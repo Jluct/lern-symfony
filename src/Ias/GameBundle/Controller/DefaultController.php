@@ -3,10 +3,14 @@
 namespace Ias\GameBundle\Controller;
 
 use Ias\GameBundle\Entity\Task;
+use Ias\GameBundle\Form\GameListType;
 use Ias\GameBundle\Form\TaskType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Ias\GameBundle\Entity\Tag;
+use Ias\GameBundle\Entity\Game;
+
+use Symfony\Component\VarDumper\VarDumper;
 
 
 class DefaultController extends Controller
@@ -14,18 +18,22 @@ class DefaultController extends Controller
     public function indexAction()
     {
         $games = $this->getDoctrine()->getRepository('IasGameBundle:Game')->findAll();
-//        var_dump($games[0]);die;
 
         return $this->render('IasGameBundle:Default:index.html.twig', ['games' => $games]);
     }
 
     public function getGameAction()
     {
-        $game_session = $this->getDoctrine()->getRepository('IasGameBundle:Game')->getActiveGameSession();
 
-//        var_dump($game_session);die;
+        $game_repository = $this->getDoctrine()->getRepository('IasGameBundle:Game');
+        $game_session = $game_repository->getActiveGameSession();
 
-        return $this->render('IasGameBundle:Default:game.html.twig', ['game_session' => $game_session]);
+        $game = $game_repository->getAllGameInBase();
+//        VarDumper::dump($game);
+
+        $gameForm = $this->createForm(GameListType::class,$game);
+
+        return $this->render('IasGameBundle:Default:game.html.twig', ['game_session' => $game_session,'gameForm'=>$gameForm->createView()]);
 
     }
 
