@@ -2,6 +2,7 @@
 
 namespace Ias\GameBundle\Entity;
 
+use FOS\UserBundle\Model\User as BaseUser;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -10,7 +11,7 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Table(name="gamer")
  * @ORM\Entity(repositoryClass="Ias\GameBundle\Repository\GamerRepository")
  */
-class Gamer
+class Gamer extends BaseUser
 {
     /**
      * @var int
