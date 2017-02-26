@@ -74,10 +74,19 @@ swiftmailer:
 
 ###SECURITY###
 
+#fos_user:
+#    db_driver: orm # other valid values are 'mongodb' and 'couchdb'
+#    firewall_name: main
+#    user_class: IasGameBundle\Entity\Gamer
+#    from_email:
+#        address: "%mailer_user%"
+#        sender_name: "%mailer_user%"
+
+# app/config/config.yml
 fos_user:
     db_driver: orm # other valid values are 'mongodb' and 'couchdb'
     firewall_name: main
-    user_class: IasGameBundle\Entity\Gamer
+    user_class: AppBundle\Entity\User
     from_email:
         address: "%mailer_user%"
         sender_name: "%mailer_user%"
