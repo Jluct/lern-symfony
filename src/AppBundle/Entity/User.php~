@@ -11,6 +11,7 @@
 
 namespace AppBundle\Entity;
 
+use Ias\GameBundle\Entity\Gamer;
 use FOS\UserBundle\Model\User as BaseUser;
 use Doctrine\ORM\Mapping as ORM;
 
@@ -26,6 +27,11 @@ class User extends BaseUser
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     protected $id;
+
+    /**
+     * @ORM\OneToOne(targetEntity="Ias\GameBundle\Entity\Gamer", mappedBy="user")
+     */
+    protected $gamer;
 
     public function __construct()
     {

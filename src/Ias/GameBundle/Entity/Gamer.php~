@@ -2,6 +2,7 @@
 
 namespace Ias\GameBundle\Entity;
 
+use AppBundle\Entity\User;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -21,12 +22,12 @@ class Gamer
      */
     private $id;
 
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="login", type="string", length=255, nullable=true)
-     */
-    private $login;
+//    /**
+//     * @var string
+//     *
+//     * @ORM\Column(name="login", type="string", length=255, nullable=true)
+//     */
+//    private $login;
 
     /**
      * @ORM\ManyToOne(targetEntity="GameSession", inversedBy="gamer")
@@ -34,8 +35,28 @@ class Gamer
      */
     private $gameSession;
 
-    
+    /**
+     * @ORM\OneToOne(targetEntity="AppBundle\Entity\User", inversedBy="gamer")
+     * @ORM\JoinColumn(name="user_id", referencedColumnName="id")
+     */
+    private $user;
 
+    /**
+     * @return mixed
+     */
+    public function getUser()
+    {
+        return $this->user;
+    }
+
+    /**
+     * @param mixed $user
+     */
+    public function setUser($user)
+    {
+        $this->user = $user;
+    }
+    
     /**
      * Get id
      *

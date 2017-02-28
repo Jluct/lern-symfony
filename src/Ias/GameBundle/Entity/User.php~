@@ -13,7 +13,7 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ORM\Entity
- * @ORM\Table(name="fos_user")
+ * @ORM\Table(name="user")
  */
 class User extends BaseUser
 {
@@ -23,6 +23,28 @@ class User extends BaseUser
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     protected $id;
+
+    /**
+     * @ORM\Column(type="integer", nullable=true)
+     * @ORM\OneToOne(targetEntity="Gamer", mappedBy="user")
+     */
+    protected $gamer;
+
+    /**
+     * @return $this->gamer
+     */
+    public function getGamer()
+    {
+        return $this->gamer;
+    }
+
+    /**
+     * @param Gamer $gamer
+     */
+    public function setGamer(Gamer $gamer)
+    {
+        $this->gamer = $gamer;
+    }
 
     public function __construct()
     {
