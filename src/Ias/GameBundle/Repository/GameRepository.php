@@ -3,6 +3,8 @@
 namespace Ias\GameBundle\Repository;
 
 use Ias\GameBundle\Entity\Game;
+use Symfony\Component\VarDumper\VarDumper;
+
 /**
  * GameRepository
  *
@@ -21,11 +23,13 @@ class GameRepository extends \Doctrine\ORM\EntityRepository
 //                            ORDER BY p.name');
 
         $query = $this->getEntityManager()->createQueryBuilder()
-            ->select('g,s,u')->from('IasGameBundle:Game', 'g')
+            ->select('g,s,u,i.username')->from('IasGameBundle:Game', 'g')
             ->leftJoin('g.gameSession', 's')
             ->leftJoin('s.gamer', 'u')
+            ->leftJoin('u.user', 'i')
             ->getQuery()
         ;
+
 
         try {
             return $query->getResult();

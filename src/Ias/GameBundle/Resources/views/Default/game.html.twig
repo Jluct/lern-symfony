@@ -29,7 +29,8 @@
                         <table class="table table-striped game_session">
                             {% for game in item.getGameSession() %}
                                 <tr>
-                                    <td>{{ game.getGamer()[0].getLogin() }}</td>
+                                    <td>{{ game.getGamer()[0].getUser().getUsername() }}</td>
+                                    <td>{{ game.getUsername() }}</td>
                                     <td>{{ game.created|date('d-m-Y H:i:s') }}</td>
                                     <td>
                                         <a role="button" href="{{ path('ias_game_join_game', {'id':game.id }) }}"
