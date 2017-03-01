@@ -23,7 +23,7 @@ class GameRepository extends \Doctrine\ORM\EntityRepository
 //                            ORDER BY p.name');
 
         $query = $this->getEntityManager()->createQueryBuilder()
-            ->select('g,s,u,i.username')->from('IasGameBundle:Game', 'g')
+            ->select('g,s,u,i')->from('IasGameBundle:Game', 'g')
             ->leftJoin('g.gameSession', 's')
             ->leftJoin('s.gamer', 'u')
             ->leftJoin('u.user', 'i')

@@ -24,13 +24,13 @@
 
                 {% for item in game_session %}
 
-                    {% if item[0].getGameSession() is not empty %}
-                        <h3>{{ item[0].name }}</h3>
+                    {% if item.getGameSession() is not empty %}
+                        <h3>{{ item.name }}</h3>
 
                         <table class="table table-striped game_session">
-                            {% for game in item[0].getGameSession() %}
+                            {% for game in item.getGameSession() %}
                                 <tr>
-                                    <td>{{ item.username }}</td>
+                                    <td>{{ game.getGamer()[0].getUser().getUsername() }}</td>
                                     <td>{{ game.created|date('d-m-Y H:i:s') }}</td>
                                     <td>
                                         <a role="button" href="{{ path('ias_game_join_game', {'id':game.id }) }}"
@@ -41,24 +41,6 @@
                         </table>
                     {% endif %}
 
-
-                    {#{% if item.getGameSession() is not empty %}#}
-                    {#<h3>{{ item.name }}</h3>#}
-
-                    {#<table class="table table-striped game_session">#}
-                    {#{% for game in item.getGameSession() %}#}
-                    {#<tr>#}
-                    {#<td>{{ game.getGamer()[0].getUser().getUsername() }}</td>#}
-                    {#<td>{{ game.getUsername() }}</td>#}
-                    {#<td>{{ game.created|date('d-m-Y H:i:s') }}</td>#}
-                    {#<td>#}
-                    {#<a role="button" href="{{ path('ias_game_join_game', {'id':game.id }) }}"#}
-                    {#class="btn btn-info btn-raised">Присоединиться</a>#}
-                    {#</td>#}
-                    {#</tr>#}
-                    {#{% endfor %}#}
-                    {#</table>#}
-                    {#{% endif %}#}
                 {% endfor %}
 
             </div>

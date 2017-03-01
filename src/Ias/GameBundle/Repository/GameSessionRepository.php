@@ -1,6 +1,7 @@
 <?php
 
 namespace Ias\GameBundle\Repository;
+use Symfony\Component\Config\Definition\Exception\InvalidTypeException;
 
 /**
  * GameSessionRepository
@@ -10,4 +11,25 @@ namespace Ias\GameBundle\Repository;
  */
 class GameSessionRepository extends \Doctrine\ORM\EntityRepository
 {
+    public function loadGameSession($id)
+    {
+        if (!(integer)$id)
+            throw new InvalidTypeException($id . " is not a number!");
+
+        $qb = $this->getEntityManager()->createQueryBuilder();
+        $query = $qb
+            ->select('s', 'g')
+            ->from('IasGameBundle:GameSession', 's')
+            ->leftJoin('s.game', 'g')
+            ->where('s.id = :id')
+            ->setParameters(['id' => $id])
+            ->getQuery();
+
+        try {
+            return $query->getResult();
+        } catch (\Doctrine\ORM\NoResultException $e) {
+            return null;
+        }
+
+    }
 }
