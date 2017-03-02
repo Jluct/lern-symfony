@@ -10,4 +10,20 @@ namespace Ias\GameBundle\Repository;
  */
 class GamerRepository extends \Doctrine\ORM\EntityRepository
 {
+    public function countSession($id)
+    {
+        $query = $this->getEntityManager()->createQueryBuilder()
+            ->select('count(g.id) as num')
+            ->from('IasGameBundle:Gamer', 'g')
+            ->leftJoin('g.gameSession', 's')
+            ->where('s.id = :id')
+            ->setParameters(['id' => $id]);
+
+
+        try {
+            return $query->getQuery()->getResult()[0]['num'];
+        } catch (\Doctrine\ORM\NoResultException $e) {
+            return null;
+        }
+    }
 }

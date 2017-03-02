@@ -18,6 +18,10 @@ ias_game_join_game:
     requirements:
         id: '\d+'
 
+ias_game_play_game:
+    path: /game/play/
+    defaults: {_controller: IasGameBundle:Play:Play}
+
 
 ####Для дебага####
 ias_game_example:

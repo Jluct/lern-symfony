@@ -27,6 +27,7 @@ class GameRepository extends \Doctrine\ORM\EntityRepository
             ->leftJoin('g.gameSession', 's')
             ->leftJoin('s.gamer', 'u')
             ->leftJoin('u.user', 'i')
+            ->where('s.status = 0')
             ->getQuery()
         ;
 

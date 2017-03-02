@@ -3,9 +3,9 @@ services:
 #        class: Ias\GameBundle\Example Путь к классу по PSR
 #        arguments: ["@service_id", "plain_value", "%parameter%"] параметры конструктора
 
-    play_session:
-        class: Ias\GameBundle\Service\Play\PlaySession
-        factory: ['Ias\GameBundle\Service\Play\PlaySession', getSession]
+    game_session:
+        class: Ias\GameBundle\Service\Game\GameSession
+        factory: ['Ias\GameBundle\Service\Game\GameSession', getSession]
         arguments: ["@doctrine.orm.entity_manager"]
 
 #    as.ias_game.play.play_game:

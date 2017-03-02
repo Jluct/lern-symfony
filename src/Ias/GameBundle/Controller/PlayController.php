@@ -41,30 +41,47 @@ class PlayController extends Controller
         if (!$this->get('security.authorization_checker')->isGranted('IS_AUTHENTICATED_FULLY'))
             throw $this->createAccessDeniedException('Авторизуйтесь для начала игры');
 
-
+        $current_gamer = $this->getUser()->getGamer();
         //      проверяем нет у пользователя другой активной сессии
-        VarDumper::dump($this->getUser()->getGamer()->getGameSession());
-
-        if ($this->getUser()->getGamer()->getGameSession() != null)
+        if ($current_gamer->getGameSession() != null)
+            //      проверяем открыта ли сессия матча
+            //      если открыта переходим к матчу
             throw $this->createAccessDeniedException('У вас уже открыта сессия');
 
         //      получаем сервис для работы с сессией
-        $game_session = $this->get('play_session');
-
+        $game_session = $this->get('game_session');
 
         //      загружаем сессию
-        VarDumper::dump($game_session->loadGameSession($id));
+        //      VarDumper::dump($game_session->loadGameSession($id));
+        if (!$game_session->loadGameSession($id)->checkedGameSession(true))
+            return $this->redirectToRoute('ias_game_get_game_session');
+
         //      добавляем пользователю id сессии
+        VarDumper::dump($game_session->getGameSession());
 
-        //      проверяем достигнуто ли максимальное кол-во игроков
+        $current_gamer->setGameSession($game_session->getGameSession());
+        $em = $this->getDoctrine()->getManager();
+        $em->persist($current_gamer);
+        $em->flush();
 
-        //      переводим сессию в закрытое состояние
+        //      проверяем достигнуто ли максимальное кол-во игроков и начинаем матч
+        if ($game_session->isMaxPlayers()) {
+            //      начинаем сессию матча
 
-        //      начинаем сессию матча
+
+            return $this->redirectToRoute('ias_game_play_game');
+
+
+        }
+
+        //      переводим сессию в открытое состояние
+        $game_session->checkedGameSession();
+
 
         //      или возвращаем на страницу списка игр
 
-        VarDumper::dump($id);
+
+//        VarDumper::dump($id);
 
         return new Response($id);
         //      return $this->redirectToRoute('ias_game_get_game_session');
@@ -76,5 +93,9 @@ class PlayController extends Controller
 
     }
 
+    public function PlayAction()
+    {
+        return new Response("Play Start!");
+    }
 
 }

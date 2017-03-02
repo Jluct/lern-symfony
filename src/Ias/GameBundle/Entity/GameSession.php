@@ -30,6 +30,29 @@ class GameSession
     private $created;
 
     /**
+     * @var boolean
+     *
+     * @ORM\Column(name="status", type="boolean")
+     */
+    private $status;
+
+    /**
+     * @return boolean
+     */
+    public function isStatus()
+    {
+        return $this->status;
+    }
+
+    /**
+     * @param boolean $status
+     */
+    public function setStatus($status)
+    {
+        $this->status = $status;
+    }
+
+    /**
      * @ORM\ManyToOne(targetEntity="Game", inversedBy="gameSession")
      * @ORM\JoinColumn(name="game_id", referencedColumnName="id")
      */
@@ -40,6 +63,7 @@ class GameSession
      */
     private $gamer;
 
+
     public function __construct()
     {
         $this->gamer = new ArrayCollection();
@@ -49,12 +73,12 @@ class GameSession
 
     public function getCountGameSession()
     {
-        
+
     }
 
     /********************
-    ** Гетеры и сетеры***
-    ********************/
+     ** Гетеры и сетеры***
+     ********************/
 
 
     /**
