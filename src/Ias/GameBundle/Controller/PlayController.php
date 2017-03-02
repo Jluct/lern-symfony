@@ -8,6 +8,7 @@
 
 namespace Ias\GameBundle\Controller;
 
+use Ias\GameBundle\Form\GameListType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Ias\GameBundle\Entity\Game;
 use Symfony\Component\HttpFoundation\RedirectResponse;
@@ -21,9 +22,20 @@ class PlayController extends Controller
     /**
      * Инициализация игровой сессии. Создание заявки на поиск оппонента
      * @param Request $request
+     *
+     * @return Response
      */
     public function initGameSessionAction(Request $request)
     {
+        if (!$this->get('security.authorization_checker')->isGranted('IS_AUTHENTICATED_FULLY'))
+            throw $this->createAccessDeniedException('Авторизуйтесь для начала игры');
+
+        $current_gamer = $this->getUser()->getGamer();
+        $game_session = $this->get('game_session');
+
+        $game_session->init($request->request->get("Game"));
+
+        return new Response();
 
 
     }

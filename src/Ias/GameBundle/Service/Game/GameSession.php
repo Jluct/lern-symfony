@@ -41,6 +41,22 @@ final class GameSession
         // TODO: Implement __clone() method.
     }
 
+    public function initGameSession($id)
+    {
+        $game = $this->manager->getRepository('IasGameBundle:Game')->findOne($id);
+        $game_session = new GameSession();
+        $game_session->setGame($game);
+        $this->manager->persist($game_session);
+
+        try {
+            $this->manager->flush();
+            $this->game_session = $game_session;
+        } catch (\Exception $e) {
+            throw new \Exception('not save');
+        }
+
+    }
+
     public static function getSession(ObjectManager $manager)
     {
         if (is_null(self::$_instance)) {
