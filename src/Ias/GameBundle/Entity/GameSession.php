@@ -63,17 +63,17 @@ class GameSession
      */
     private $gamer;
 
+    /**
+     * @var Storage $storage
+     *
+     * @ORM\OneToMany(targetEntity="Storage", mappedBy="gameSession")
+     */
+    private $storage;
 
     public function __construct()
     {
         $this->gamer = new ArrayCollection();
         $this->created = new \DateTime();
-    }
-
-
-    public function getCountGameSession()
-    {
-
     }
 
     /********************
@@ -171,5 +171,63 @@ class GameSession
     public function getGamer()
     {
         return $this->gamer;
+    }
+
+    /**
+     * Get status
+     *
+     * @return boolean
+     */
+    public function getStatus()
+    {
+        return $this->status;
+    }
+
+    /**
+     * Set storage
+     *
+     * @param \Ias\GameBundle\Entity\Storage $storage
+     *
+     * @return GameSession
+     */
+    public function setStorage(\Ias\GameBundle\Entity\Storage $storage = null)
+    {
+        $this->storage = $storage;
+
+        return $this;
+    }
+
+    /**
+     * Get storage
+     *
+     * @return \Ias\GameBundle\Entity\Storage
+     */
+    public function getStorage()
+    {
+        return $this->storage;
+    }
+
+    /**
+     * Add storage
+     *
+     * @param \Ias\GameBundle\Entity\Storage $storage
+     *
+     * @return GameSession
+     */
+    public function addStorage(\Ias\GameBundle\Entity\Storage $storage)
+    {
+        $this->storage[] = $storage;
+
+        return $this;
+    }
+
+    /**
+     * Remove storage
+     *
+     * @param \Ias\GameBundle\Entity\Storage $storage
+     */
+    public function removeStorage(\Ias\GameBundle\Entity\Storage $storage)
+    {
+        $this->storage->removeElement($storage);
     }
 }

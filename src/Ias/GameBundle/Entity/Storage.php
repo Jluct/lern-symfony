@@ -1,0 +1,210 @@
+<?php
+
+namespace Ias\GameBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints\DateTime;
+
+/**
+ * Storage
+ *
+ * @ORM\Table(name="storage")
+ * @ORM\Entity(repositoryClass="Ias\GameBundle\Repository\StorageRepository")
+ */
+class Storage
+{
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
+    /**
+     * @var array - массив ходов игроков. Формат произвольный для каждой игры
+     *
+     * @ORM\Column(name="history", type="array")
+     */
+    private $history;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="updated", type="datetime")
+     */
+    private $updated;
+
+    /**
+     * @var array - массив игроков, которые участвуют в игре. Очерёдность записи указывает на последовательность ходов.
+     *
+     * ID должны вписываться случайным порядком.
+     *
+     * @ORM\Column(name="players", type="array")
+     */
+    private $players;
+
+    /**
+     * @return array
+     */
+    public function getPlayers()
+    {
+        return $this->players;
+    }
+
+    /**
+     * @param array $players
+     */
+    public function setPlayers($players)
+    {
+        $this->players = $players;
+    }
+
+    /**
+     * @return string
+     */
+    public function getLast()
+    {
+        return $this->last;
+    }
+
+    /**
+     * @param string $last
+     */
+    public function setLast($last)
+    {
+        $this->last = $last;
+    }
+
+    /**
+     * @return array
+     */
+    public function getAction()
+    {
+        return $this->action;
+    }
+
+    /**
+     * @param array $action
+     */
+    public function setAction($action)
+    {
+        $this->action = $action;
+    }
+
+    /**
+     * @var string - последний игрок, который ходил. соответственно следующим ходит тот, чьё ID после него.
+     *
+     * При его ходе поле буде перезаписано
+     *
+     * @ORM\Column(name="last", type="integer")
+     */
+    private $last;
+
+    /**
+     * @var array - массив последнего хода. Нужен - нет, пусть решает фронт-энд
+     *
+     * @ORM\Column(name="action", type="array")
+     */
+    private $action;
+
+    /**
+     * Get id
+     *
+     * @return int
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set history
+     *
+     * @param array $history
+     *
+     * @return Storage
+     */
+    public function setHistory($history)
+    {
+        $this->history = $history;
+
+        return $this;
+    }
+
+    /**
+     * Get history
+     *
+     * @return array
+     */
+    public function getHistory()
+    {
+        return $this->history;
+    }
+
+    /**
+     * Set updated
+     *
+     * @param \DateTime $updated
+     *
+     * @return Storage
+     */
+    public function setUpdated($updated)
+    {
+        $this->updated = $updated;
+
+        return $this;
+    }
+
+    /**
+     * Get updated
+     *
+     * @return \DateTime
+     */
+    public function getUpdated()
+    {
+        return $this->updated;
+    }
+
+    /**
+     * @var GameSession gameSession
+     *
+     * @ORM\ManyToOne(targetEntity="GameSession", inversedBy="storage")
+     * @ORM\JoinColumn(name="gameSession_id", referencedColumnName="id")
+     */
+    private $gameSession;
+
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->updated = new DateTime();
+    }
+    
+
+    /**
+     * Set gameSession
+     *
+     * @param \Ias\GameBundle\Entity\GameSession $gameSession
+     *
+     * @return Storage
+     */
+    public function setGameSession(\Ias\GameBundle\Entity\GameSession $gameSession = null)
+    {
+        $this->gameSession = $gameSession;
+
+        return $this;
+    }
+
+    /**
+     * Get gameSession
+     *
+     * @return \Ias\GameBundle\Entity\GameSession
+     */
+    public function getGameSession()
+    {
+        return $this->gameSession;
+    }
+}

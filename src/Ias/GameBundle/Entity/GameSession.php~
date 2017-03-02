@@ -30,6 +30,29 @@ class GameSession
     private $created;
 
     /**
+     * @var boolean
+     *
+     * @ORM\Column(name="status", type="boolean")
+     */
+    private $status;
+
+    /**
+     * @return boolean
+     */
+    public function isStatus()
+    {
+        return $this->status;
+    }
+
+    /**
+     * @param boolean $status
+     */
+    public function setStatus($status)
+    {
+        $this->status = $status;
+    }
+
+    /**
      * @ORM\ManyToOne(targetEntity="Game", inversedBy="gameSession")
      * @ORM\JoinColumn(name="game_id", referencedColumnName="id")
      */
@@ -40,21 +63,22 @@ class GameSession
      */
     private $gamer;
 
+    /**
+     * @var Storage $storage
+     *
+     * @ORM\OneToMany(targetEntity="Storage", mappedBy="gameSession")
+     */
+    private $storage;
+
     public function __construct()
     {
         $this->gamer = new ArrayCollection();
         $this->created = new \DateTime();
     }
 
-
-    public function getCountGameSession()
-    {
-        
-    }
-
     /********************
-    ** Гетеры и сетеры***
-    ********************/
+     ** Гетеры и сетеры***
+     ********************/
 
 
     /**
@@ -147,5 +171,39 @@ class GameSession
     public function getGamer()
     {
         return $this->gamer;
+    }
+
+    /**
+     * Get status
+     *
+     * @return boolean
+     */
+    public function getStatus()
+    {
+        return $this->status;
+    }
+
+    /**
+     * Set storage
+     *
+     * @param \Ias\GameBundle\Entity\Storage $storage
+     *
+     * @return GameSession
+     */
+    public function setStorage(\Ias\GameBundle\Entity\Storage $storage = null)
+    {
+        $this->storage = $storage;
+
+        return $this;
+    }
+
+    /**
+     * Get storage
+     *
+     * @return \Ias\GameBundle\Entity\Storage
+     */
+    public function getStorage()
+    {
+        return $this->storage;
     }
 }
