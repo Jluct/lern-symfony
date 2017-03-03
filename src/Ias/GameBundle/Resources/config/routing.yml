@@ -18,6 +18,13 @@ ias_game_join_game:
     requirements:
         id: '\d+'
 
+ias_game_unjoin_game:
+    path: /game/unjoin/{id}
+    defaults: {_controller: IasGameBundle:Play:unjoinGameSession}
+    methods: [GET]
+    requirements:
+        id: '\d+'
+
 ias_game_play_game:
     path: /game/play/
     defaults: {_controller: IasGameBundle:Play:Play}

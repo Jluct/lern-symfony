@@ -50,10 +50,6 @@ final class GameSession
         $game_session->setStatus(false);
         $this->manager->persist($game_session);
 
-        dump($id);
-        dump($game);
-        dump($game_session);die;
-
         try {
             $this->manager->flush();
             $this->game_session = $game_session;

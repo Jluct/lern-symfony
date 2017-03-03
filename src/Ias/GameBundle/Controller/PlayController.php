@@ -11,6 +11,7 @@ namespace Ias\GameBundle\Controller;
 use Ias\GameBundle\Form\GameListType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Ias\GameBundle\Entity\Game;
+use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -36,9 +37,7 @@ class PlayController extends Controller
         if ($current_gamer->getGameSession() != null)
             throw $this->createAccessDeniedException('У вас уже открыта сессия');
 
-        dump($request->request);
-
-        $game_session->initGameSession($request->request->get("Game"));
+        $game_session->initGameSession($request->request->get("game_list")["Game"]);
 
         $current_gamer->setGameSession($game_session->getGameSession());
         $em = $this->getDoctrine()->getManager();
@@ -70,6 +69,7 @@ class PlayController extends Controller
 
         $current_gamer = $this->getUser()->getGamer();
         //      проверяем нет у пользователя другой активной сессии
+        VarDumper::dump($current_gamer);
         if ($current_gamer->getGameSession() != null)
             //      проверяем открыта ли сессия матча
             //      если открыта переходим к матчу
@@ -96,7 +96,7 @@ class PlayController extends Controller
             //      начинаем сессию матча
 
 
-            return $this->redirectToRoute('ias_game_play_game');
+//            return $this->redirectToRoute('ias_game_play_game');
 
 
         }
@@ -111,7 +111,7 @@ class PlayController extends Controller
 //        VarDumper::dump($id);
 
 //        return new Response($id);
-              return $this->redirectToRoute('ias_game_get_game_session');
+        return $this->redirectToRoute('ias_game_get_game_session');
         //      return new RedirectResponse($this->generateUrl('ias_game_get_game_session'));
     }
 
@@ -122,7 +122,9 @@ class PlayController extends Controller
 
     public function PlayAction()
     {
-        return new Response("Play Start!");
+        $data = ['start' => false];
+
+        return new JsonResponse($data);
     }
 
 }

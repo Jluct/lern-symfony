@@ -29,13 +29,21 @@
 
                         <table class="table table-striped game_session">
                             {% for game in item.getGameSession() %}
-                                <tr>
+                                <tr {% if is_granted('IS_AUTHENTICATED_FULLY') and app.user.getGamer().getGameSession().getId() is defined and  app.user.getGamer().getGameSession().getId() == game.id %}
+                                    class="success"
+                                        {% endif %}>
                                     <td>{{ game.getGamer()[0].getUser().getUsername() }}</td>
                                     <td>{{ game.created|date('d-m-Y H:i:s') }}</td>
                                     <td>
-                                        <a role="button" href="{{ path('ias_game_join_game', {'id':game.id }) }}"
-                                           class="btn btn-info btn-raised">Присоединиться</a>
+                                        {% if is_granted('IS_AUTHENTICATED_FULLY') and app.user.getGamer().getGameSession().getId() is not defined %}
+                                            <a role="button" href="{{ path('ias_game_join_game', {'id':game.id }) }}"
+                                               class="btn btn-info btn-raised">Присоединиться</a>
+                                        {% elseif is_granted('IS_AUTHENTICATED_FULLY') and app.user.getGamer().getGameSession().getId() is defined and app.user.getGamer().getGameSession().getId() == game.id %}
+                                            <a role="button" href="{{ path('ias_game_unjoin_game', {'id':game.id }) }}"
+                                               class="btn btn-danger btn-raised">Покинуть заявку</a>
+                                        {% endif %}
                                     </td>
+
                                 </tr>
                             {% endfor %}
                         </table>
@@ -48,3 +56,16 @@
         </div>
     </div>
 {% endblock %}
+
+
+
+    {% block javascript %}
+        {{ parent() }}
+        {% if is_granted('IS_AUTHENTICATED_FULLY')
+        and app.user.getGamer().getGameSession().getId() is defined
+        and app.user.getGamer().getGameSession().getId() is not null %}
+            <script src="{{ asset('/bundles/iasgame/js/joinGame.js') }}"></script>
+        {% endif %}
+
+    {% endblock %}
+
