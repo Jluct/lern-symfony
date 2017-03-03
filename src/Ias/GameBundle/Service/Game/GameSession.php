@@ -11,6 +11,7 @@ namespace Ias\GameBundle\Service\Game;
 
 use Doctrine\DBAL\Exception\DatabaseObjectExistsException;
 use Ias\GameBundle\Entity\Game;
+use Ias\GameBundle\Entity\GameSession as GS;
 use Doctrine\Common\Persistence\ObjectManager;
 
 use Symfony\Component\Config\Definition\Exception\Exception;
@@ -43,16 +44,21 @@ final class GameSession
 
     public function initGameSession($id)
     {
-        $game = $this->manager->getRepository('IasGameBundle:Game')->findOne($id);
-        $game_session = new GameSession();
+        $game = $this->manager->getRepository('IasGameBundle:Game')->findOneById($id);
+        $game_session = new GS();
         $game_session->setGame($game);
+        $game_session->setStatus(false);
         $this->manager->persist($game_session);
+
+        dump($id);
+        dump($game);
+        dump($game_session);die;
 
         try {
             $this->manager->flush();
             $this->game_session = $game_session;
         } catch (\Exception $e) {
-            throw new \Exception('not save');
+            throw new \Exception('not save' . $e . error_get_last());
         }
 
     }

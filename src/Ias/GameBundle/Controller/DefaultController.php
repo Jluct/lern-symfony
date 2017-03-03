@@ -29,7 +29,7 @@ class DefaultController extends Controller
         $game_session = $game_repository->getActiveGameSession();
 
         $game = $game_repository->getAllGameInBase();
-        VarDumper::dump($game_session);
+        VarDumper::dump($game);
 
         $gameForm = $this->createForm(GameListType::class, $game, [
             'action' => $this->generateUrl('ias_game_init_game_session'),

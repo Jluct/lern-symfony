@@ -33,10 +33,25 @@ class PlayController extends Controller
         $current_gamer = $this->getUser()->getGamer();
         $game_session = $this->get('game_session');
 
-        $game_session->init($request->request->get("Game"));
+        if ($current_gamer->getGameSession() != null)
+            throw $this->createAccessDeniedException('У вас уже открыта сессия');
 
-        return new Response();
+        dump($request->request);
 
+        $game_session->initGameSession($request->request->get("Game"));
+
+        $current_gamer->setGameSession($game_session->getGameSession());
+        $em = $this->getDoctrine()->getManager();
+        $em->persist($current_gamer);
+        $em->flush();
+
+        $this->addFlash(
+            'notice',
+            'Заявка подана!'
+        );
+        return new Response('test');
+
+//        return $this->redirectToRoute('ias_game_get_game_session');
 
     }
 
@@ -95,8 +110,8 @@ class PlayController extends Controller
 
 //        VarDumper::dump($id);
 
-        return new Response($id);
-        //      return $this->redirectToRoute('ias_game_get_game_session');
+//        return new Response($id);
+              return $this->redirectToRoute('ias_game_get_game_session');
         //      return new RedirectResponse($this->generateUrl('ias_game_get_game_session'));
     }
 
