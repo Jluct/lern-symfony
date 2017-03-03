@@ -2,10 +2,17 @@ ias_game_homepage:
     path:     /game
     defaults: { _controller: IasGameBundle:Default:index}
 
-
 ias_game_get_game_session:
     path:     /inquiry
     defaults: { _controller: IasGameBundle:Default:getGame}
+
+ias_game_is_game_session:
+    path:     /game/isgame
+    defaults: {_controller: IasGameBundle:Play:isStartGameSession, _format: json}
+    methods: [POST]
+    requirements:
+        _format: json|csv
+
 
 ias_game_init_game_session:
     path:     /game/init

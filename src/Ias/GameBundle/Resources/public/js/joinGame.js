@@ -4,10 +4,9 @@
 
 $(function () {
     setInterval(function () {
-        $.get('/game/play/', function (data) {
+        $.post('/game/isgame', function (data) {
             if (data.start == true)
-                window.url('/game/play/');
-
+                window.location.href = '/game/play/';
         });
     }, 1000*3);
 

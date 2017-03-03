@@ -48,9 +48,16 @@ class PlayController extends Controller
             'notice',
             'Заявка подана!'
         );
-        return new Response('test');
 
-//        return $this->redirectToRoute('ias_game_get_game_session');
+        if ($game_session->isMaxPlayers()) {
+            //      начинаем сессию матча
+
+//            return $this->redirectToRoute('ias_game_play_game');
+        }
+
+//        return new Response('test');
+
+        return $this->redirectToRoute('ias_game_get_game_session');
 
     }
 
@@ -69,7 +76,7 @@ class PlayController extends Controller
 
         $current_gamer = $this->getUser()->getGamer();
         //      проверяем нет у пользователя другой активной сессии
-        VarDumper::dump($current_gamer);
+//        VarDumper::dump($current_gamer);
         if ($current_gamer->getGameSession() != null)
             //      проверяем открыта ли сессия матча
             //      если открыта переходим к матчу
@@ -94,11 +101,7 @@ class PlayController extends Controller
         //      проверяем достигнуто ли максимальное кол-во игроков и начинаем матч
         if ($game_session->isMaxPlayers()) {
             //      начинаем сессию матча
-
-
-//            return $this->redirectToRoute('ias_game_play_game');
-
-
+            return $this->redirectToRoute('ias_game_play_game');
         }
 
         //      переводим сессию в открытое состояние
@@ -120,11 +123,39 @@ class PlayController extends Controller
 
     }
 
-    public function PlayAction()
+    public function isStartGameSessionAction()
     {
+        //      проверяем авторизован ли ползователь
+        if (!$this->get('security.authorization_checker')->isGranted('IS_AUTHENTICATED_FULLY'))
+            throw $this->createAccessDeniedException('Авторизуйтесь для начала игры');
+
         $data = ['start' => false];
 
+        $game = $this->getUser()->getGamer();
+
+        if (!empty($game->getGameSession()) && $game->getGameSession()->getStatus())
+            $data['start'] = true;
+
+//        $game_session = $this->get('game_session');
+//
+//        if (!$game_session->loadGameSession($id)->checkedGameSession(true))
+//            return $this->redirectToRoute('ias_game_get_game_session');
+
+//        if ($game_session->isMaxPlayers()) {
+        //      начинаем сессию матча
+
+//            return $this->redirectToRoute('ias_game_play_game');
+//        }
+
+
         return new JsonResponse($data);
+
+    }
+
+    public function PlayAction()
+    {
+        return new Response("START!");
+
     }
 
 }
