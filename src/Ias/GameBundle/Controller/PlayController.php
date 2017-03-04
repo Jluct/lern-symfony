@@ -69,14 +69,12 @@ class PlayController extends Controller
      */
     public function joinGameSessionAction($id)
     {
-
         //      проверяем авторизован ли ползователь
         if (!$this->get('security.authorization_checker')->isGranted('IS_AUTHENTICATED_FULLY'))
             throw $this->createAccessDeniedException('Авторизуйтесь для начала игры');
 
         $current_gamer = $this->getUser()->getGamer();
         //      проверяем нет у пользователя другой активной сессии
-//        VarDumper::dump($current_gamer);
         if ($current_gamer->getGameSession() != null)
             //      проверяем открыта ли сессия матча
             //      если открыта переходим к матчу
@@ -86,13 +84,10 @@ class PlayController extends Controller
         $game_session = $this->get('game_session');
 
         //      загружаем сессию
-        //      VarDumper::dump($game_session->loadGameSession($id));
         if (!$game_session->loadGameSession($id)->checkedGameSession(true))
             return $this->redirectToRoute('ias_game_get_game_session');
 
         //      добавляем пользователю id сессии
-        VarDumper::dump($game_session->getGameSession());
-
         $current_gamer->setGameSession($game_session->getGameSession());
         $em = $this->getDoctrine()->getManager();
         $em->persist($current_gamer);
@@ -101,21 +96,18 @@ class PlayController extends Controller
         //      проверяем достигнуто ли максимальное кол-во игроков и начинаем матч
         if ($game_session->isMaxPlayers()) {
             //      начинаем сессию матча
+
+
+            //возвращаем ответ с кодом игры
             return $this->redirectToRoute('ias_game_play_game');
         }
 
         //      переводим сессию в открытое состояние
         $game_session->checkedGameSession();
 
-
         //      или возвращаем на страницу списка игр
-
-
-//        VarDumper::dump($id);
-
-//        return new Response($id);
         return $this->redirectToRoute('ias_game_get_game_session');
-        //      return new RedirectResponse($this->generateUrl('ias_game_get_game_session'));
+
     }
 
     public function deleteGameSessionAction($id)
@@ -154,6 +146,25 @@ class PlayController extends Controller
 
     public function PlayAction()
     {
+        //      проверяем авторизован ли ползователь
+        if (!$this->get('security.authorization_checker')->isGranted('IS_AUTHENTICATED_FULLY'))
+            throw $this->createAccessDeniedException('Авторизуйтесь для начала игры');
+
+        $current_gamer = $this->getUser()->getGamer();
+        //      проверяем нет у пользователя другой активной сессии
+        if ($current_gamer->getGameSession() == null)
+            //      проверяем открыта ли сессия матча
+            //      если открыта переходим к матчу
+            return $this->redirectToRoute('ias_game_get_game_session');
+
+        $game_session = $this->get('game_session');
+
+        //      получаем сервис для работы с сессией
+        if (!$game_session->loadGameSession($current_gamer->getGameSession()->getId()))
+            return $this->redirectToRoute('ias_game_get_game_session');
+
+        
+
         return new Response("START!");
 
     }

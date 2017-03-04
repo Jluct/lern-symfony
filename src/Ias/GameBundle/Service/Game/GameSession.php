@@ -80,8 +80,6 @@ final class GameSession
         if (empty($this->game_session))
             return false;
 
-        VarDumper::dump($this->game_session);
-
         if (empty($status))
             $this->game_session->setStatus(false == $this->game_session->isStatus());
         else
@@ -101,7 +99,6 @@ final class GameSession
     {
         $game = $this->game_session->getGame();
         $count_game_session = $this->manager->getRepository('IasGameBundle:Gamer')->countSession($this->game_session->getId());
-        VarDumper::dump($count_game_session);
 
         if ($game->getMaxCountPlayers() == $count_game_session)
             return true;

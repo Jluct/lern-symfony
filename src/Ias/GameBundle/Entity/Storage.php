@@ -23,96 +23,23 @@ class Storage
     private $id;
 
     /**
-     * @var array - массив ходов игроков. Формат произвольный для каждой игры
+     * @var string - массив ходов игроков. Формат произвольный для каждой игры
      *
-     * @ORM\Column(name="history", type="array")
+     * @ORM\Column(name="resources", type="text")
      */
-    private $history;
+
+    private $resources;
 
     /**
-     * @var \DateTime
-     *
-     * @ORM\Column(name="updated", type="datetime")
+     * @ORM\ManyToOne(targetEntity="Game", inversedBy="storage")
+     * @ORM\JoinColumn(name="game_id", referencedColumnName="id")
      */
-    private $updated;
-
-    /**
-     * @var array - массив игроков, которые участвуют в игре. Очерёдность записи указывает на последовательность ходов.
-     *
-     * ID должны вписываться случайным порядком.
-     *
-     * @ORM\Column(name="players", type="array")
-     */
-    private $players;
-
-    /**
-     * @return array
-     */
-    public function getPlayers()
-    {
-        return $this->players;
-    }
-
-    /**
-     * @param array $players
-     */
-    public function setPlayers($players)
-    {
-        $this->players = $players;
-    }
-
-    /**
-     * @return string
-     */
-    public function getLast()
-    {
-        return $this->last;
-    }
-
-    /**
-     * @param string $last
-     */
-    public function setLast($last)
-    {
-        $this->last = $last;
-    }
-
-    /**
-     * @return array
-     */
-    public function getAction()
-    {
-        return $this->action;
-    }
-
-    /**
-     * @param array $action
-     */
-    public function setAction($action)
-    {
-        $this->action = $action;
-    }
-
-    /**
-     * @var string - последний игрок, который ходил. соответственно следующим ходит тот, чьё ID после него.
-     *
-     * При его ходе поле буде перезаписано
-     *
-     * @ORM\Column(name="last", type="integer")
-     */
-    private $last;
-
-    /**
-     * @var array - массив последнего хода. Нужен - нет, пусть решает фронт-энд
-     *
-     * @ORM\Column(name="action", type="array")
-     */
-    private $action;
+    private $game;
 
     /**
      * Get id
      *
-     * @return int
+     * @return integer
      */
     public function getId()
     {
@@ -120,91 +47,50 @@ class Storage
     }
 
     /**
-     * Set history
+     * Set resources
      *
-     * @param array $history
+     * @param string $resources
      *
      * @return Storage
      */
-    public function setHistory($history)
+    public function setResources($resources)
     {
-        $this->history = $history;
+        $this->resources = $resources;
 
         return $this;
     }
 
     /**
-     * Get history
+     * Get resources
      *
-     * @return array
+     * @return string
      */
-    public function getHistory()
+    public function getResources()
     {
-        return $this->history;
+        return $this->resources;
     }
 
     /**
-     * Set updated
+     * Set game
      *
-     * @param \DateTime $updated
+     * @param \Ias\GameBundle\Entity\Game $game
      *
      * @return Storage
      */
-    public function setUpdated($updated)
+    public function setGame(\Ias\GameBundle\Entity\Game $game = null)
     {
-        $this->updated = $updated;
+        $this->game = $game;
 
         return $this;
     }
 
     /**
-     * Get updated
+     * Get game
      *
-     * @return \DateTime
+     * @return \Ias\GameBundle\Entity\Game
      */
-    public function getUpdated()
+    public function getGame()
     {
-        return $this->updated;
-    }
-
-    /**
-     * @var GameSession gameSession
-     *
-     * @ORM\ManyToOne(targetEntity="GameSession", inversedBy="storage")
-     * @ORM\JoinColumn(name="gameSession_id", referencedColumnName="id")
-     */
-    private $gameSession;
-
-    /**
-     * Constructor
-     */
-    public function __construct()
-    {
-        $this->updated = new DateTime();
-    }
-    
-
-    /**
-     * Set gameSession
-     *
-     * @param \Ias\GameBundle\Entity\GameSession $gameSession
-     *
-     * @return Storage
-     */
-    public function setGameSession(\Ias\GameBundle\Entity\GameSession $gameSession = null)
-    {
-        $this->gameSession = $gameSession;
-
-        return $this;
-    }
-
-    /**
-     * Get gameSession
-     *
-     * @return \Ias\GameBundle\Entity\GameSession
-     */
-    public function getGameSession()
-    {
-        return $this->gameSession;
+        return $this->game;
     }
 }

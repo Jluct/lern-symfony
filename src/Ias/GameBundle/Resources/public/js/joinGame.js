@@ -8,6 +8,21 @@ $(function () {
             if (data.start == true)
                 window.location.href = '/game/play/';
         });
-    }, 1000*3);
+    }, 1000 * 3);
 
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

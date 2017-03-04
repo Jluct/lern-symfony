@@ -66,9 +66,9 @@ class GameSession
     /**
      * @var Storage $storage
      *
-     * @ORM\OneToMany(targetEntity="Storage", mappedBy="gameSession")
+     * @ORM\OneToMany(targetEntity="Play", mappedBy="gameSession")
      */
-    private $storage;
+    private $play;
 
     public function __construct()
     {
@@ -229,5 +229,39 @@ class GameSession
     public function removeStorage(\Ias\GameBundle\Entity\Storage $storage)
     {
         $this->storage->removeElement($storage);
+    }
+
+    /**
+     * Add play
+     *
+     * @param \Ias\GameBundle\Entity\Play $play
+     *
+     * @return GameSession
+     */
+    public function addPlay(\Ias\GameBundle\Entity\Play $play)
+    {
+        $this->play[] = $play;
+
+        return $this;
+    }
+
+    /**
+     * Remove play
+     *
+     * @param \Ias\GameBundle\Entity\Play $play
+     */
+    public function removePlay(\Ias\GameBundle\Entity\Play $play)
+    {
+        $this->play->removeElement($play);
+    }
+
+    /**
+     * Get play
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getPlay()
+    {
+        return $this->play;
     }
 }

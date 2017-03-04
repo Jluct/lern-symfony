@@ -58,6 +58,13 @@ class Game
     private $description;
 
     /**
+     * @var Storage
+     * 
+     * @ORM\OneToMany(targetEntity="Storage", mappedBy="game")
+     */
+    private $storage;
+
+    /**
      * @ORM\OneToMany(targetEntity="GameSession", mappedBy="game")
      */
     private $gameSession;
@@ -229,5 +236,39 @@ class Game
     public function getGameSession()
     {
         return $this->gameSession;
+    }
+
+    /**
+     * Add storage
+     *
+     * @param \Ias\GameBundle\Entity\Storage $storage
+     *
+     * @return Game
+     */
+    public function addStorage(\Ias\GameBundle\Entity\Storage $storage)
+    {
+        $this->storage[] = $storage;
+
+        return $this;
+    }
+
+    /**
+     * Remove storage
+     *
+     * @param \Ias\GameBundle\Entity\Storage $storage
+     */
+    public function removeStorage(\Ias\GameBundle\Entity\Storage $storage)
+    {
+        $this->storage->removeElement($storage);
+    }
+
+    /**
+     * Get storage
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getStorage()
+    {
+        return $this->storage;
     }
 }

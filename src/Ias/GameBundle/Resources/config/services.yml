@@ -8,6 +8,11 @@ services:
         factory: ['Ias\GameBundle\Service\Game\GameSession', getSession]
         arguments: ["@doctrine.orm.entity_manager"]
 
+    play_services:
+        class: Ias\GameBundle\Service\Game\Play
+        factory: ['Ias\GameBundle\Service\Game\Play', getPlay]
+        arguments: ["@doctrine.orm.entity_manager"]
+
 #    as.ias_game.play.play_game:
 #        class: Ias\GameBundle\Service\Play\PlayGame\Game
 #        arguments: ["%game_id%"]
