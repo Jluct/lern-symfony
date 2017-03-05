@@ -10,11 +10,13 @@ namespace Ias\GameBundle\Repository;
  */
 class GamerRepository extends \Doctrine\ORM\EntityRepository
 {
+    const TABLE = "IasGameBundle:Gamer";
+
     public function countSession($id)
     {
         $query = $this->getEntityManager()->createQueryBuilder()
             ->select('count(g.id) as num')
-            ->from('IasGameBundle:Gamer', 'g')
+            ->from(self::TABLE, 'g')
             ->leftJoin('g.gameSession', 's')
             ->where('s.id = :id')
             ->setParameters(['id' => $id]);
@@ -25,5 +27,30 @@ class GamerRepository extends \Doctrine\ORM\EntityRepository
         } catch (\Doctrine\ORM\NoResultException $e) {
             return null;
         }
+    }
+
+    public function getGamersForSession($id)
+    {
+//        $query = $this->getEntityManager()->createQueryBuilder()
+//            ->select('p.id')
+//            ->from(self::TABLE, 'p')
+//            ->leftJoin('p.gameSession', 's')
+//            ->where('s.id = :id')
+//            ->setParameters(['id' => $id]);
+
+        $query = $this->getEntityManager()->createQuery("
+            SELECT p.id FROM IasGameBundle:Gamer p
+            LEFT JOIN p.gameSession c
+            WHERE c.id = :id
+        ")->setParameters(['id' => $id]);
+
+        //а разницы нихера
+
+        try {
+            return $query->getResult();
+        } catch (\Doctrine\ORM\NoResultException $e) {
+            return null;
+        }
+
     }
 }

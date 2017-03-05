@@ -14,7 +14,7 @@ use Symfony\Component\Validator\Constraints\DateTime;
 /**
  * Storage
  *
- * @ORM\Table(name="storage")
+ * @ORM\Table(name="play")
  * @ORM\Entity(repositoryClass="Ias\GameBundle\Repository\PlayRepository")
  */
 class Play

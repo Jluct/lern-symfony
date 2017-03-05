@@ -2,20 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="af9fd658-f715-48a2-b7b2-2076075009bb" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Ias/GameBundle/Entity/Play.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Ias/GameBundle/Repository/PlayRepository.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Ias/GameBundle/Service/Game/Play.php" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Ias/GameBundle/Entity/PlaySession.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Ias/GameBundle/Repository/PlaySessionRepository.php" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Ias/GameBundle/Service/Game/Gamer.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Ias/GameBundle/Controller/PlayController.php" afterPath="$PROJECT_DIR$/src/Ias/GameBundle/Controller/PlayController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Ias/GameBundle/Entity/Game.php" afterPath="$PROJECT_DIR$/src/Ias/GameBundle/Entity/Game.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Ias/GameBundle/Entity/GameSession.php" afterPath="$PROJECT_DIR$/src/Ias/GameBundle/Entity/GameSession.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Ias/GameBundle/Entity/Gamer.php" afterPath="$PROJECT_DIR$/src/Ias/GameBundle/Entity/Gamer.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Ias/GameBundle/Entity/Storage.php" afterPath="$PROJECT_DIR$/src/Ias/GameBundle/Entity/Storage.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Ias/GameBundle/Resources/config/services.yml" afterPath="$PROJECT_DIR$/src/Ias/GameBundle/Resources/config/services.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Ias/GameBundle/Resources/public/js/joinGame.js" afterPath="$PROJECT_DIR$/src/Ias/GameBundle/Resources/public/js/joinGame.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Ias/GameBundle/Service/Game/GameSession.php" afterPath="$PROJECT_DIR$/src/Ias/GameBundle/Service/Game/GameSession.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Ias/GameBundle/Entity/Play.php" afterPath="$PROJECT_DIR$/src/Ias/GameBundle/Entity/Play.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Ias/GameBundle/Repository/GamerRepository.php" afterPath="$PROJECT_DIR$/src/Ias/GameBundle/Repository/GamerRepository.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Ias/GameBundle/Repository/PlayRepository.php" afterPath="$PROJECT_DIR$/src/Ias/GameBundle/Repository/PlayRepository.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Ias/GameBundle/Service/Game/Play.php" afterPath="$PROJECT_DIR$/src/Ias/GameBundle/Service/Game/Play.php" />
     </list>
     <ignored path="symfony.my.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -37,76 +30,16 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Storage.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Ias/GameBundle/Entity/Storage.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="799">
-              <caret line="48" column="7" selection-start-line="48" selection-start-column="7" selection-end-line="48" selection-end-column="7" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Game.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Ias/GameBundle/Entity/Game.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="727">
-              <caret line="82" column="5" selection-start-line="82" selection-start-column="5" selection-end-line="82" selection-end-column="5" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GameSession.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Ias/GameBundle/Entity/GameSession.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="449">
-              <caret line="68" column="53" selection-start-line="68" selection-start-column="53" selection-end-line="68" selection-end-column="53" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Play.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Ias/GameBundle/Entity/Play.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1717">
-              <caret line="16" column="24" selection-start-line="16" selection-start-column="24" selection-end-line="16" selection-end-column="24" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="services.yml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Ias/GameBundle/Resources/config/services.yml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="12" column="61" selection-start-line="12" selection-start-column="61" selection-end-line="12" selection-end-column="61" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Play.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Ias/GameBundle/Service/Game/Play.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="24" column="32" selection-start-line="24" selection-start-column="32" selection-end-line="24" selection-end-column="32" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PlayController.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="PlayController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Ias/GameBundle/Controller/PlayController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="754">
-              <caret line="165" column="8" selection-start-line="165" selection-start-column="8" selection-end-line="165" selection-end-column="8" />
+            <state relative-caret-position="361">
+              <caret line="96" column="44" selection-start-line="96" selection-start-column="44" selection-end-line="96" selection-end-column="44" />
               <folding>
                 <element signature="e#132#169#0#PHP" expanded="true" />
                 <element signature="e#1557#1713#0#PHP" expanded="false" />
-                <element signature="e#3661#3718#0#PHP" expanded="false" />
-                <element signature="e#3724#4638#0#PHP" expanded="false" />
+                <element signature="e#4043#4100#0#PHP" expanded="false" />
+                <element signature="e#4106#5020#0#PHP" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -115,11 +48,56 @@
       <file leaf-file-name="GameSession.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Ias/GameBundle/Service/Game/GameSession.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="669">
-              <caret line="73" column="110" selection-start-line="73" selection-start-column="110" selection-end-line="73" selection-end-column="110" />
+            <state relative-caret-position="364">
+              <caret line="73" column="98" selection-start-line="73" selection-start-column="98" selection-end-line="73" selection-end-column="98" />
               <folding>
                 <element signature="e#135#193#0#PHP" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Play.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Ias/GameBundle/Service/Game/Play.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="533">
+              <caret line="43" column="33" selection-start-line="43" selection-start-column="33" selection-end-line="43" selection-end-column="33" />
+              <folding>
+                <element signature="e#133#169#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PlayRepository.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Ias/GameBundle/Repository/PlayRepository.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="289">
+              <caret line="22" column="33" selection-start-line="22" selection-start-column="33" selection-end-line="22" selection-end-column="33" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GamerRepository.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Ias/GameBundle/Repository/GamerRepository.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="680">
+              <caret line="46" column="26" selection-start-line="46" selection-start-column="26" selection-end-line="46" selection-end-column="26" />
+              <folding>
+                <marker date="1488743162001" expanded="true" signature="1153:1169" ph="SELECT p FRO... " />
+                <marker date="1488743162001" expanded="true" signature="1153:1258" ph="SELECT p.id ${self::TABLE}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GameRepository.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Ias/GameBundle/Repository/GameRepository.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="323">
+              <caret line="20" column="35" selection-start-line="20" selection-start-column="35" selection-end-line="20" selection-end-column="50" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -147,7 +125,6 @@
         <option value="$PROJECT_DIR$/src/Ias/GameBundle/Service/Play/PlaySession/Session.php" />
         <option value="$PROJECT_DIR$/src/Ias/GameBundle/Service/Play/PlaySession.php" />
         <option value="$PROJECT_DIR$/src/Jluct/BlogBundle/Controller/DefaultController.php" />
-        <option value="$PROJECT_DIR$/src/Ias/GameBundle/Repository/GamerRepository.php" />
         <option value="$PROJECT_DIR$/src/Ias/GameBundle/Repository/GameSessionRepository.php" />
         <option value="$PROJECT_DIR$/src/Ias/GameBundle/Repository/GameRepository.php" />
         <option value="$PROJECT_DIR$/src/Ias/GameBundle/Controller/DefaultController.php" />
@@ -159,13 +136,15 @@
         <option value="$PROJECT_DIR$/src/Ias/GameBundle/Entity/PlaySession.php" />
         <option value="$PROJECT_DIR$/src/Ias/GameBundle/Entity/GameSession.php" />
         <option value="$PROJECT_DIR$/src/Ias/GameBundle/Entity/Game.php" />
-        <option value="$PROJECT_DIR$/src/Ias/GameBundle/Repository/PlayRepository.php" />
         <option value="$PROJECT_DIR$/src/Ias/GameBundle/Entity/Play.php" />
         <option value="$PROJECT_DIR$/src/Ias/GameBundle/Entity/Storage.php" />
         <option value="$PROJECT_DIR$/src/Ias/GameBundle/Resources/config/services.yml" />
-        <option value="$PROJECT_DIR$/src/Ias/GameBundle/Service/Game/Play.php" />
         <option value="$PROJECT_DIR$/src/Ias/GameBundle/Service/Game/GameSession.php" />
+        <option value="$PROJECT_DIR$/src/Ias/GameBundle/Service/Helpers/Thin/Randomizer.php" />
         <option value="$PROJECT_DIR$/src/Ias/GameBundle/Controller/PlayController.php" />
+        <option value="$PROJECT_DIR$/src/Ias/GameBundle/Service/Game/Play.php" />
+        <option value="$PROJECT_DIR$/src/Ias/GameBundle/Repository/PlayRepository.php" />
+        <option value="$PROJECT_DIR$/src/Ias/GameBundle/Repository/GamerRepository.php" />
       </list>
     </option>
   </component>
@@ -211,7 +190,6 @@
     </navigator>
     <panes>
       <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -406,6 +384,88 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="Resources" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="config" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="symfony.my" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="symfony.my" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Ias" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GameBundle" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Repository" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="symfony.my" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="symfony.my" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Ias" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GameBundle" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Entity" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="symfony.my" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="symfony.my" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Ias" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GameBundle" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="Controller" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
@@ -546,6 +606,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -616,18 +677,20 @@
       <workItem from="1488553606218" duration="12081000" />
       <workItem from="1488570092197" duration="5003000" />
       <workItem from="1488613653460" duration="7047000" />
-      <workItem from="1488630361920" duration="8339000" />
+      <workItem from="1488630361920" duration="8535000" />
+      <workItem from="1488652384497" duration="5760000" />
+      <workItem from="1488737917903" duration="4999000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="102726000" />
+    <option name="totallyTimeSpent" value="113681000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17910448" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18230277" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -641,7 +704,7 @@
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32950193" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32901832" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
@@ -664,14 +727,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/Ias/GameBundle/Entity/User.php" />
-    <entry file="file://$PROJECT_DIR$/vendor/friendsofsymfony/user-bundle/Resources/config/routing/security.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="38" selection-start-line="6" selection-start-column="15" selection-end-line="6" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/vendor/friendsofsymfony/user-bundle/Resources/config/routing/registration.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
@@ -758,20 +813,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Ias/GameBundle/Repository/GamerRepository.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="23" column="60" selection-start-line="23" selection-start-column="60" selection-end-line="23" selection-end-column="60" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Ias/GameBundle/Repository/GameSessionRepository.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="30" column="40" selection-start-line="30" selection-start-column="40" selection-end-line="30" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Ias/GameBundle/Entity/Gamer.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="344">
@@ -832,13 +873,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
           <caret line="30" column="31" selection-start-line="30" selection-start-column="31" selection-end-line="30" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Ias/GameBundle/Repository/GameRepository.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="765">
-          <caret line="46" column="13" selection-start-line="46" selection-start-column="13" selection-end-line="46" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -914,6 +948,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Ias/GameBundle/Repository/PlaySessionRepository.php" />
     <entry file="file://$PROJECT_DIR$/src/Ias/GameBundle/Entity/PlaySession.php" />
+    <entry file="file://$PROJECT_DIR$/src/Ias/GameBundle/Resources/config/config.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Ias/GameBundle/Entity/GameSession.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="449">
@@ -934,46 +975,37 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="799">
           <caret line="48" column="7" selection-start-line="48" selection-start-column="7" selection-end-line="48" selection-end-column="7" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Ias/GameBundle/Entity/Play.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1717">
-          <caret line="16" column="24" selection-start-line="16" selection-start-column="24" selection-end-line="16" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Ias/GameBundle/Resources/config/config.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Ias/GameBundle/Repository/PlayRepository.php">
+    <entry file="file://$PROJECT_DIR$/src/Ias/GameBundle/Service/Helpers/Thin/Randomizer.php" />
+    <entry file="file://$PROJECT_DIR$/src/Ias/GameBundle/Service/Game/Gamer.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="12" column="1" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Ias/GameBundle/Resources/config/services.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
-          <caret line="12" column="61" selection-start-line="12" selection-start-column="61" selection-end-line="12" selection-end-column="61" />
+          <caret line="12" column="62" selection-start-line="12" selection-start-column="62" selection-end-line="12" selection-end-column="62" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Ias/GameBundle/Service/Game/Play.php">
+    <entry file="file://$PROJECT_DIR$/src/Ias/GameBundle/Entity/Play.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="24" column="32" selection-start-line="24" selection-start-column="32" selection-end-line="24" selection-end-column="32" />
+        <state relative-caret-position="347">
+          <caret line="179" column="44" selection-start-line="179" selection-start-column="44" selection-end-line="179" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Ias/GameBundle/Repository/GameSessionRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="30" column="40" selection-start-line="30" selection-start-column="40" selection-end-line="30" selection-end-column="40" />
           <folding />
         </state>
       </provider>
@@ -986,10 +1018,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Ias/GameBundle/Repository/GameRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="20" column="35" selection-start-line="20" selection-start-column="35" selection-end-line="20" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Ias/GameBundle/Service/Game/GameSession.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="669">
-          <caret line="73" column="110" selection-start-line="73" selection-start-column="110" selection-end-line="73" selection-end-column="110" />
+        <state relative-caret-position="364">
+          <caret line="73" column="98" selection-start-line="73" selection-start-column="98" selection-end-line="73" selection-end-column="98" />
           <folding>
             <element signature="e#135#193#0#PHP" expanded="true" />
           </folding>
@@ -998,13 +1038,42 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Ias/GameBundle/Controller/PlayController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="754">
-          <caret line="165" column="8" selection-start-line="165" selection-start-column="8" selection-end-line="165" selection-end-column="8" />
+        <state relative-caret-position="361">
+          <caret line="96" column="44" selection-start-line="96" selection-start-column="44" selection-end-line="96" selection-end-column="44" />
           <folding>
             <element signature="e#132#169#0#PHP" expanded="true" />
             <element signature="e#1557#1713#0#PHP" expanded="false" />
-            <element signature="e#3661#3718#0#PHP" expanded="false" />
-            <element signature="e#3724#4638#0#PHP" expanded="false" />
+            <element signature="e#4043#4100#0#PHP" expanded="false" />
+            <element signature="e#4106#5020#0#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Ias/GameBundle/Repository/PlayRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="22" column="33" selection-start-line="22" selection-start-column="33" selection-end-line="22" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Ias/GameBundle/Repository/GamerRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="680">
+          <caret line="46" column="26" selection-start-line="46" selection-start-column="26" selection-end-line="46" selection-end-column="26" />
+          <folding>
+            <marker date="1488743162001" expanded="true" signature="1153:1169" ph="SELECT p FRO... " />
+            <marker date="1488743162001" expanded="true" signature="1153:1258" ph="SELECT p.id ${self::TABLE}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Ias/GameBundle/Service/Game/Play.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="533">
+          <caret line="43" column="33" selection-start-line="43" selection-start-column="33" selection-end-line="43" selection-end-column="33" />
+          <folding>
+            <element signature="e#133#169#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
