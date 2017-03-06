@@ -10,4 +10,21 @@ namespace Ias\GameBundle\Repository;
  */
 class StorageRepository extends \Doctrine\ORM\EntityRepository
 {
+    const TABLE = "IasGameBundle:Storage";
+
+    public function getGameStorage($id)
+    {
+        $query = $this->getEntityManager()->createQueryBuilder()
+            ->select(self::TABLE, 's')
+            ->leftJoin('s.game', 'g')
+            ->where('g.id = :id')
+            ->setParameters(['id' => $id]);
+
+        try {
+            return $query->getQuery()->getResult()[0];
+        } catch (\Doctrine\ORM\NoResultException $e) {
+            return null;
+        }
+    }
+
 }

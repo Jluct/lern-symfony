@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="af9fd658-f715-48a2-b7b2-2076075009bb" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Ias/GameBundle/Controller/PlayController.php" afterPath="$PROJECT_DIR$/src/Ias/GameBundle/Controller/PlayController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Ias/GameBundle/Repository/StorageRepository.php" afterPath="$PROJECT_DIR$/src/Ias/GameBundle/Repository/StorageRepository.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Ias/GameBundle/Service/Game/Play.php" afterPath="$PROJECT_DIR$/src/Ias/GameBundle/Service/Game/Play.php" />
     </list>
     <ignored path="symfony.my.iws" />
@@ -27,8 +29,18 @@
       <file leaf-file-name="PlayController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Ias/GameBundle/Controller/PlayController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="718">
-              <caret line="114" column="47" selection-start-line="114" selection-start-column="47" selection-end-line="114" selection-end-column="47" />
+            <state relative-caret-position="922">
+              <caret line="176" column="52" selection-start-line="176" selection-start-column="52" selection-end-line="176" selection-end-column="52" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="StorageRepository.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Ias/GameBundle/Repository/StorageRepository.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="408">
+              <caret line="24" column="54" selection-start-line="24" selection-start-column="54" selection-end-line="24" selection-end-column="54" />
               <folding />
             </state>
           </provider>
@@ -37,7 +49,7 @@
       <file leaf-file-name="GameSession.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Ias/GameBundle/Service/Game/GameSession.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="721">
+            <state relative-caret-position="820">
               <caret line="90" column="22" selection-start-line="90" selection-start-column="17" selection-end-line="90" selection-end-column="22" />
               <folding>
                 <element signature="e#135#193#0#PHP" expanded="true" />
@@ -46,11 +58,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Play.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Play.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Ias/GameBundle/Service/Game/Play.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="616">
-              <caret line="51" column="51" selection-start-line="51" selection-start-column="51" selection-end-line="51" selection-end-column="51" />
+            <state relative-caret-position="816">
+              <caret line="71" column="32" selection-start-line="71" selection-start-column="32" selection-end-line="71" selection-end-column="32" />
               <folding>
                 <element signature="e#133#169#0#PHP" expanded="true" />
               </folding>
@@ -61,8 +73,8 @@
       <file leaf-file-name="PlayRepository.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Ias/GameBundle/Repository/PlayRepository.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="22" column="33" selection-start-line="22" selection-start-column="33" selection-end-line="22" selection-end-column="33" />
+            <state relative-caret-position="425">
+              <caret line="30" column="9" selection-start-line="26" selection-start-column="8" selection-end-line="30" selection-end-column="9" />
               <folding />
             </state>
           </provider>
@@ -71,8 +83,8 @@
       <file leaf-file-name="GamerRepository.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Ias/GameBundle/Repository/GamerRepository.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="888">
-              <caret line="56" column="0" selection-start-line="56" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
+            <state relative-caret-position="140">
+              <caret line="12" column="19" selection-start-line="12" selection-start-column="19" selection-end-line="12" selection-end-column="38" />
               <folding>
                 <marker date="1488780384841" expanded="true" signature="1153:1258" ph="SELECT p.id IasGameBundle" />
               </folding>
@@ -129,10 +141,11 @@
         <option value="$PROJECT_DIR$/src/Ias/GameBundle/Resources/config/services.yml" />
         <option value="$PROJECT_DIR$/src/Ias/GameBundle/Service/Game/GameSession.php" />
         <option value="$PROJECT_DIR$/src/Ias/GameBundle/Service/Helpers/Thin/Randomizer.php" />
-        <option value="$PROJECT_DIR$/src/Ias/GameBundle/Controller/PlayController.php" />
         <option value="$PROJECT_DIR$/src/Ias/GameBundle/Repository/PlayRepository.php" />
         <option value="$PROJECT_DIR$/src/Ias/GameBundle/Repository/GamerRepository.php" />
         <option value="$PROJECT_DIR$/src/Ias/GameBundle/Service/Game/Play.php" />
+        <option value="$PROJECT_DIR$/src/Ias/GameBundle/Controller/PlayController.php" />
+        <option value="$PROJECT_DIR$/src/Ias/GameBundle/Repository/StorageRepository.php" />
       </list>
     </option>
   </component>
@@ -668,12 +681,12 @@
       <workItem from="1488630361920" duration="8535000" />
       <workItem from="1488652384497" duration="5760000" />
       <workItem from="1488737917903" duration="4999000" />
-      <workItem from="1488780489560" duration="8328000" />
+      <workItem from="1488780489560" duration="14547000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="122009000" />
+    <option name="totallyTimeSpent" value="128228000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1176" extended-state="6" />
@@ -900,13 +913,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/config/security.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="761">
-          <caret line="85" column="45" selection-start-line="85" selection-start-column="45" selection-end-line="85" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/config/routing.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
@@ -991,31 +997,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Ias/GameBundle/Repository/StorageRepository.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="24" selection-start-line="10" selection-start-column="24" selection-end-line="10" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Ias/GameBundle/Repository/PlayRepository.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="22" column="33" selection-start-line="22" selection-start-column="33" selection-end-line="22" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Ias/GameBundle/Repository/GamerRepository.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="888">
-          <caret line="56" column="0" selection-start-line="56" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
-          <folding>
-            <marker date="1488780384841" expanded="true" signature="1153:1258" ph="SELECT p.id IasGameBundle" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Ias/GameBundle/Repository/GameRepository.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
@@ -1024,17 +1005,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Ias/GameBundle/Controller/PlayController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="718">
-          <caret line="114" column="47" selection-start-line="114" selection-start-column="47" selection-end-line="114" selection-end-column="47" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Ias/GameBundle/Service/Game/GameSession.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="721">
+        <state relative-caret-position="820">
           <caret line="90" column="22" selection-start-line="90" selection-start-column="17" selection-end-line="90" selection-end-column="22" />
           <folding>
             <element signature="e#135#193#0#PHP" expanded="true" />
@@ -1042,13 +1015,55 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Ias/GameBundle/Controller/PlayController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="922">
+          <caret line="176" column="52" selection-start-line="176" selection-start-column="52" selection-end-line="176" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Ias/GameBundle/Service/Game/Play.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="616">
-          <caret line="51" column="51" selection-start-line="51" selection-start-column="51" selection-end-line="51" selection-end-column="51" />
+        <state relative-caret-position="816">
+          <caret line="71" column="32" selection-start-line="71" selection-start-column="32" selection-end-line="71" selection-end-column="32" />
           <folding>
             <element signature="e#133#169#0#PHP" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Ias/GameBundle/Repository/PlayRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="30" column="9" selection-start-line="26" selection-start-column="8" selection-end-line="30" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Ias/GameBundle/Repository/GamerRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="140">
+          <caret line="12" column="19" selection-start-line="12" selection-start-column="19" selection-end-line="12" selection-end-column="38" />
+          <folding>
+            <marker date="1488780384841" expanded="true" signature="1153:1258" ph="SELECT p.id IasGameBundle" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/config/security.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="387">
+          <caret line="58" column="50" selection-start-line="58" selection-start-column="50" selection-end-line="58" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Ias/GameBundle/Repository/StorageRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="24" column="54" selection-start-line="24" selection-start-column="54" selection-end-line="24" selection-end-column="54" />
+          <folding />
         </state>
       </provider>
     </entry>

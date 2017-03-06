@@ -65,11 +65,11 @@ final class Play
 
     public function getGamePlay($game_session)
     {
-
         $play = $this->manager->getRepository('IasGameBundle:Play')->getPlay($game_session->getId());
 
         if ($game_session != null) {
             $this->game_session = $game_session;
+            $this->play = $play;
             return $play;
         }
 
