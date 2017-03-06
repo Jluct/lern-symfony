@@ -18,6 +18,7 @@ final class Play
 
     private $manager = null;
     private $game_session = null;
+    private $play = null;
 
     public static function getPlay(ObjectManager $manager)
     {
@@ -35,15 +36,31 @@ final class Play
 
     public function initPlay($game_session)
     {
+        $players = [];
+
         $play = new P();
         $play->setGameSession($game_session);
 
         $gamers = $this->manager->getRepository('IasGameBundle:Gamer')->getGamersForSession($game_session->getId());
+        shuffle($gamers);
 
-        //shuffle
-        VarDumper::dump($gamers);
+        for ($i = 0; $i < count($gamers); $i++) {
+            $players[] = $gamers[$i]['id'];
+        }
+
+        $play->setPlayers($players);
+        $play->setLast($players[count($players) - 1]);
+        $play->setHistory([]);
+        $play->setAction([]);
+        $play->setUpdated(new \DateTime());
 
 
+        $this->manager->persist($play);
+        $this->manager->flush();
+
+        $this->play = $play;
+        VarDumper::dump($this->play);
+        return $this->play;
     }
 
     public function getGamePlay($game_session)
