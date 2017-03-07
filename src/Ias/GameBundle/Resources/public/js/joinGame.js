@@ -5,6 +5,7 @@
 $(function () {
     setInterval(function () {
         $.post('/game/isgame', function (data) {
+            console.log(data);
             if (data.start == true)
                 window.location.href = '/game/play/';
         });

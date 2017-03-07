@@ -20,7 +20,8 @@ class GameRepository extends \Doctrine\ORM\EntityRepository
 //            ->createQuery('SELECT p, c, d FROM IasGameBundle:Game p
 //                            JOIN p.gameSession c
 //                            JOIN c.gamer d
-//                            ORDER BY p.name');
+//                            ORDER BY p.name'
+//                          );
 
         $query = $this->getEntityManager()->createQueryBuilder()
             ->select('g,s,u,i')->from('IasGameBundle:Game', 'g')

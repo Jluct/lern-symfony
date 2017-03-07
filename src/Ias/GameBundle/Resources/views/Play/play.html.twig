@@ -1,0 +1,18 @@
+{% extends 'IasGameBundle::base.html.twig' %}
+
+{% block page_stylesheets %}
+    {{ parent() }}
+    <link href="{{ asset('/bundles/iasgame/css/GameSession.css') }}" rel="stylesheet"/>
+{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                {{ game.getStorage() }}
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+

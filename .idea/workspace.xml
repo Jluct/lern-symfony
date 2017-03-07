@@ -2,8 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="af9fd658-f715-48a2-b7b2-2076075009bb" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Ias/GameBundle/Resources/views/Play/play.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Ias/GameBundle/Controller/PlayController.php" afterPath="$PROJECT_DIR$/src/Ias/GameBundle/Controller/PlayController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Ias/GameBundle/Repository/GameRepository.php" afterPath="$PROJECT_DIR$/src/Ias/GameBundle/Repository/GameRepository.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Ias/GameBundle/Repository/PlayRepository.php" afterPath="$PROJECT_DIR$/src/Ias/GameBundle/Repository/PlayRepository.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Ias/GameBundle/Repository/StorageRepository.php" afterPath="$PROJECT_DIR$/src/Ias/GameBundle/Repository/StorageRepository.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Ias/GameBundle/Resources/public/js/joinGame.js" afterPath="$PROJECT_DIR$/src/Ias/GameBundle/Resources/public/js/joinGame.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Ias/GameBundle/Service/Game/Play.php" afterPath="$PROJECT_DIR$/src/Ias/GameBundle/Service/Game/Play.php" />
     </list>
     <ignored path="symfony.my.iws" />
@@ -29,31 +34,29 @@
       <file leaf-file-name="PlayController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Ias/GameBundle/Controller/PlayController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="922">
-              <caret line="176" column="52" selection-start-line="176" selection-start-column="52" selection-end-line="176" selection-end-column="52" />
+            <state relative-caret-position="412">
+              <caret line="139" column="33" selection-start-line="139" selection-start-column="33" selection-end-line="139" selection-end-column="33" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="StorageRepository.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/Ias/GameBundle/Repository/StorageRepository.php">
+      <file leaf-file-name="play.html.twig" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Ias/GameBundle/Resources/views/Play/play.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="24" column="54" selection-start-line="24" selection-start-column="54" selection-end-line="24" selection-end-column="54" />
+            <state relative-caret-position="187">
+              <caret line="11" column="16" selection-start-line="11" selection-start-column="16" selection-end-line="11" selection-end-column="39" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GameSession.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Ias/GameBundle/Service/Game/GameSession.php">
+      <file leaf-file-name="joinGame.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Ias/GameBundle/Resources/public/js/joinGame.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="820">
-              <caret line="90" column="22" selection-start-line="90" selection-start-column="17" selection-end-line="90" selection-end-column="22" />
-              <folding>
-                <element signature="e#135#193#0#PHP" expanded="true" />
-              </folding>
+            <state relative-caret-position="119">
+              <caret line="7" column="30" selection-start-line="7" selection-start-column="30" selection-end-line="7" selection-end-column="30" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -61,8 +64,8 @@
       <file leaf-file-name="Play.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Ias/GameBundle/Service/Game/Play.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="816">
-              <caret line="71" column="32" selection-start-line="71" selection-start-column="32" selection-end-line="71" selection-end-column="32" />
+            <state relative-caret-position="667">
+              <caret line="65" column="41" selection-start-line="65" selection-start-column="41" selection-end-line="65" selection-end-column="41" />
               <folding>
                 <element signature="e#133#169#0#PHP" expanded="true" />
               </folding>
@@ -70,11 +73,21 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="StorageRepository.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Ias/GameBundle/Repository/StorageRepository.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="357">
+              <caret line="21" column="23" selection-start-line="21" selection-start-column="23" selection-end-line="21" selection-end-column="23" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="PlayRepository.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Ias/GameBundle/Repository/PlayRepository.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
-              <caret line="30" column="9" selection-start-line="26" selection-start-column="8" selection-end-line="30" selection-end-column="9" />
+            <state relative-caret-position="391">
+              <caret line="28" column="55" selection-start-line="28" selection-start-column="55" selection-end-line="28" selection-end-column="55" />
               <folding />
             </state>
           </provider>
@@ -83,8 +96,8 @@
       <file leaf-file-name="GamerRepository.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Ias/GameBundle/Repository/GamerRepository.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="140">
-              <caret line="12" column="19" selection-start-line="12" selection-start-column="19" selection-end-line="12" selection-end-column="38" />
+            <state relative-caret-position="582">
+              <caret line="38" column="45" selection-start-line="38" selection-start-column="45" selection-end-line="38" selection-end-column="45" />
               <folding>
                 <marker date="1488780384841" expanded="true" signature="1153:1258" ph="SELECT p.id IasGameBundle" />
               </folding>
@@ -95,8 +108,8 @@
       <file leaf-file-name="GameRepository.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Ias/GameBundle/Repository/GameRepository.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="20" column="35" selection-start-line="20" selection-start-column="35" selection-end-line="20" selection-end-column="50" />
+            <state relative-caret-position="374">
+              <caret line="23" column="28" selection-start-line="23" selection-start-column="28" selection-end-line="23" selection-end-column="28" />
               <folding />
             </state>
           </provider>
@@ -126,13 +139,11 @@
         <option value="$PROJECT_DIR$/src/Ias/GameBundle/Service/Play/PlaySession.php" />
         <option value="$PROJECT_DIR$/src/Jluct/BlogBundle/Controller/DefaultController.php" />
         <option value="$PROJECT_DIR$/src/Ias/GameBundle/Repository/GameSessionRepository.php" />
-        <option value="$PROJECT_DIR$/src/Ias/GameBundle/Repository/GameRepository.php" />
         <option value="$PROJECT_DIR$/src/Ias/GameBundle/Controller/DefaultController.php" />
         <option value="$PROJECT_DIR$/src/Ias/GameBundle/Form/GameListType.php" />
         <option value="$PROJECT_DIR$/src/Ias/GameBundle/Resources/views/Default/game.html.twig" />
         <option value="$PROJECT_DIR$/app/config/security.yml" />
         <option value="$PROJECT_DIR$/src/Ias/GameBundle/Resources/config/routing.yml" />
-        <option value="$PROJECT_DIR$/src/Ias/GameBundle/Resources/public/js/joinGame.js" />
         <option value="$PROJECT_DIR$/src/Ias/GameBundle/Entity/PlaySession.php" />
         <option value="$PROJECT_DIR$/src/Ias/GameBundle/Entity/GameSession.php" />
         <option value="$PROJECT_DIR$/src/Ias/GameBundle/Entity/Game.php" />
@@ -141,11 +152,14 @@
         <option value="$PROJECT_DIR$/src/Ias/GameBundle/Resources/config/services.yml" />
         <option value="$PROJECT_DIR$/src/Ias/GameBundle/Service/Game/GameSession.php" />
         <option value="$PROJECT_DIR$/src/Ias/GameBundle/Service/Helpers/Thin/Randomizer.php" />
-        <option value="$PROJECT_DIR$/src/Ias/GameBundle/Repository/PlayRepository.php" />
         <option value="$PROJECT_DIR$/src/Ias/GameBundle/Repository/GamerRepository.php" />
         <option value="$PROJECT_DIR$/src/Ias/GameBundle/Service/Game/Play.php" />
-        <option value="$PROJECT_DIR$/src/Ias/GameBundle/Controller/PlayController.php" />
+        <option value="$PROJECT_DIR$/src/Ias/GameBundle/Resources/public/js/joinGame.js" />
+        <option value="$PROJECT_DIR$/src/Ias/GameBundle/Repository/GameRepository.php" />
         <option value="$PROJECT_DIR$/src/Ias/GameBundle/Repository/StorageRepository.php" />
+        <option value="$PROJECT_DIR$/src/Ias/GameBundle/Resources/views/Play/game.html.twig" />
+        <option value="$PROJECT_DIR$/src/Ias/GameBundle/Repository/PlayRepository.php" />
+        <option value="$PROJECT_DIR$/src/Ias/GameBundle/Controller/PlayController.php" />
       </list>
     </option>
   </component>
@@ -281,6 +295,58 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="Resources" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="symfony.my" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="symfony.my" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Jluct" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BlogBundle" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Repository" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="symfony.my" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="symfony.my" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Jluct" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BlogBundle" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="Controller" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
@@ -362,6 +428,10 @@
               <option name="myItemId" value="Resources" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -389,7 +459,135 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="config" />
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Play" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="symfony.my" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="symfony.my" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Ias" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GameBundle" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Resources" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Default" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="symfony.my" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="symfony.my" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Ias" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GameBundle" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Resources" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="symfony.my" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="symfony.my" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Ias" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GameBundle" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Resources" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="symfony.my" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="symfony.my" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Ias" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GameBundle" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Resources" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -618,11 +816,14 @@
     <property name="settings.editor.splitter.proportion" value="0.2" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="E:\OS\OpenServer\domains\symfony.my\var" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\OS\OpenServer\domains\symfony.my\src\Ias\GameBundle\Controller" />
+      <recent name="E:\OS\OpenServer\domains\symfony.my\var" />
       <recent name="E:\OS\OpenServer\domains\symfony.my\src\Ias\GameBundle\Service\Play" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\OS\OpenServer\domains\symfony.my\src\Ias\GameBundle\Resources\views\Play" />
+      <recent name="E:\OS\OpenServer\domains\symfony.my\var" />
     </key>
   </component>
   <component name="RunManager">
@@ -681,18 +882,19 @@
       <workItem from="1488630361920" duration="8535000" />
       <workItem from="1488652384497" duration="5760000" />
       <workItem from="1488737917903" duration="4999000" />
-      <workItem from="1488780489560" duration="14547000" />
+      <workItem from="1488780489560" duration="14628000" />
+      <workItem from="1488865974719" duration="8537000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="128228000" />
+    <option name="totallyTimeSpent" value="136846000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1176" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18443497" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18656716" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -729,13 +931,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/vendor/friendsofsymfony/user-bundle/Resources/config/routing/registration.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="45" selection-start-line="6" selection-start-column="15" selection-end-line="6" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://E:/загрузки/Копия daemon.log" />
     <entry file="file://$PROJECT_DIR$/src/Ias/GameBundle/DependencyInjection/Configuration.php">
       <provider selected="true" editor-type-id="text-editor">
@@ -871,13 +1066,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Ias/GameBundle/Controller/DefaultController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="30" column="31" selection-start-line="30" selection-start-column="31" selection-end-line="30" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Resources/views/default/nav.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -934,7 +1122,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Ias/GameBundle/Resources/public/js/joinGame.js" />
     <entry file="file://$PROJECT_DIR$/src/Ias/GameBundle/Repository/PlaySessionRepository.php" />
     <entry file="file://$PROJECT_DIR$/src/Ias/GameBundle/Entity/PlaySession.php" />
     <entry file="file://$PROJECT_DIR$/src/Ias/GameBundle/Resources/config/config.yml">
@@ -997,11 +1184,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Ias/GameBundle/Repository/GameRepository.php">
+    <entry file="file://$PROJECT_DIR$/app/config/security.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="20" column="35" selection-start-line="20" selection-start-column="35" selection-end-line="20" selection-end-column="50" />
-          <folding />
+        <state relative-caret-position="387">
+          <caret line="58" column="50" selection-start-line="58" selection-start-column="50" selection-end-line="58" selection-end-column="50" />
         </state>
       </provider>
     </entry>
@@ -1010,59 +1196,83 @@
         <state relative-caret-position="820">
           <caret line="90" column="22" selection-start-line="90" selection-start-column="17" selection-end-line="90" selection-end-column="22" />
           <folding>
-            <element signature="e#135#193#0#PHP" expanded="true" />
+            <element signature="e#135#193#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Ias/GameBundle/Controller/PlayController.php">
+    <entry file="file://$PROJECT_DIR$/src/Ias/GameBundle/Resources/public/js/joinGame.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="922">
-          <caret line="176" column="52" selection-start-line="176" selection-start-column="52" selection-end-line="176" selection-end-column="52" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Ias/GameBundle/Service/Game/Play.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="816">
-          <caret line="71" column="32" selection-start-line="71" selection-start-column="32" selection-end-line="71" selection-end-column="32" />
-          <folding>
-            <element signature="e#133#169#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Ias/GameBundle/Repository/PlayRepository.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="30" column="9" selection-start-line="26" selection-start-column="8" selection-end-line="30" selection-end-column="9" />
+        <state relative-caret-position="119">
+          <caret line="7" column="30" selection-start-line="7" selection-start-column="30" selection-end-line="7" selection-end-column="30" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Ias/GameBundle/Repository/GamerRepository.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="12" column="19" selection-start-line="12" selection-start-column="19" selection-end-line="12" selection-end-column="38" />
+        <state relative-caret-position="582">
+          <caret line="38" column="45" selection-start-line="38" selection-start-column="45" selection-end-line="38" selection-end-column="45" />
           <folding>
             <marker date="1488780384841" expanded="true" signature="1153:1258" ph="SELECT p.id IasGameBundle" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/config/security.yml">
+    <entry file="file://$PROJECT_DIR$/src/Ias/GameBundle/Repository/GameRepository.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="387">
-          <caret line="58" column="50" selection-start-line="58" selection-start-column="50" selection-end-line="58" selection-end-column="50" />
+        <state relative-caret-position="374">
+          <caret line="23" column="28" selection-start-line="23" selection-start-column="28" selection-end-line="23" selection-end-column="28" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Ias/GameBundle/Repository/StorageRepository.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="24" column="54" selection-start-line="24" selection-start-column="54" selection-end-line="24" selection-end-column="54" />
+        <state relative-caret-position="357">
+          <caret line="21" column="23" selection-start-line="21" selection-start-column="23" selection-end-line="21" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Ias/GameBundle/Repository/PlayRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="28" column="55" selection-start-line="28" selection-start-column="55" selection-end-line="28" selection-end-column="55" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Ias/GameBundle/Service/Game/Play.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="667">
+          <caret line="65" column="41" selection-start-line="65" selection-start-column="41" selection-end-line="65" selection-end-column="41" />
+          <folding>
+            <element signature="e#133#169#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Ias/GameBundle/Controller/PlayController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="412">
+          <caret line="139" column="33" selection-start-line="139" selection-start-column="33" selection-end-line="139" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Ias/GameBundle/Controller/DefaultController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-13">
+          <caret line="30" column="31" selection-start-line="30" selection-start-column="31" selection-end-line="30" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Ias/GameBundle/Resources/views/Play/play.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="16" selection-start-line="11" selection-start-column="16" selection-end-line="11" selection-end-column="39" />
           <folding />
         </state>
       </provider>

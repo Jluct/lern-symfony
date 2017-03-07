@@ -14,18 +14,19 @@ class PlayRepository extends \Doctrine\ORM\EntityRepository
 
     const TABLE = "IasGameBundle:Play";
 
-    public function getPlay($id)
+    public function getPlay($id) //User id
     {
         $query = $this->getEntityManager()->createQueryBuilder()
             ->select('p')
             ->from(self::TABLE, 'p')
             ->leftJoin('p.gameSession', 's')
-            ->where('s.id = :id')
-            ->setParameters(['id' => $id])
-        ;
+            ->leftJoin('s.gamer', 'g')
+            ->leftJoin('g.user', 'u')
+            ->where('u.id = :id')
+            ->setParameters(['id' => $id]);
 
         try {
-            return $query->getQuery()->getResult();
+            return $query->getQuery()->getFirstResult();
         } catch (\Doctrine\ORM\NoResultException $e) {
             return null;
         }

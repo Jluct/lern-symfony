@@ -15,9 +15,11 @@ class StorageRepository extends \Doctrine\ORM\EntityRepository
     public function getGameStorage($id)
     {
         $query = $this->getEntityManager()->createQueryBuilder()
-            ->select(self::TABLE, 's')
-            ->leftJoin('s.game', 'g')
-            ->where('g.id = :id')
+            ->select('s')
+            ->from('IasGameBundle:GameSession','gs')
+            ->leftJoin('gs.game', 'g')
+            ->leftJoin('g.storage', 's')
+            ->where('gs.id = :id')
             ->setParameters(['id' => $id]);
 
         try {

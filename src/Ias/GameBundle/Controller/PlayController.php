@@ -97,7 +97,7 @@ class PlayController extends Controller
         if ($game_session->isMaxPlayers()) {
             //      начинаем сессию матча
             $play = $this->get('play_services');
-            if ($play->getGamePlay($current_gamer->getGameSession()) != null) {
+            if ($play->getGamePlay($this->getUser()->getId()) != null) {
 
                 return $this->redirectToRoute('ias_game_play_game');
 
@@ -131,9 +131,17 @@ class PlayController extends Controller
 
         $data = ['start' => false];
 
-        $game = $this->getUser()->getGamer();
+        $id = $this->getUser()->getId();
 
-        if (!empty($game->getGameSession()) && $game->getGameSession()->getStatus())
+        $play = $this->get('play_services');
+
+        $result = $play->getGamePlay($id);
+
+        VarDumper::dump($result);
+
+        $data['data'] = $result;
+
+        if ($result)
             $data['start'] = true;
 
 //        $game_session = $this->get('game_session');
@@ -154,27 +162,33 @@ class PlayController extends Controller
 
     public function PlayAction()
     {
+
         //      проверяем авторизован ли пользователь
         if (!$this->get('security.authorization_checker')->isGranted('IS_AUTHENTICATED_FULLY'))
             throw $this->createAccessDeniedException('Авторизуйтесь для начала игры');
 
-        $current_gamer = $this->getUser()->getGamer();  //тут есть ID сессии
+        $id = $this->getUser()->getId();
 
         $play = $this->get('play_services');
 
-        VarDumper::dump($play->getGamePlay($current_gamer->getGameSession()));
+        $result = $play->getGamePlay($id);
 
+        VarDumper::dump($result);
 
-//        if ($current_gamer->getGameSession()->getPlay() != null)
-//            return new Response("START!");
-//        
-//        $play = $this->get('play_services');
-//        
-//        $play->loadPlay($current_gamer->getGameSession());
+        if (!$result)
+            return $this->redirectToRoute('ias_game_get_game_session');
 
-        $storage = $this->getDoctrine()->getRepository('IasGameBundle:Storage')->getGameStorage($current_gamer->getGameSession()->getGame()->getId());
+        $storage = $this->getDoctrine()->getRepository('IasGameBundle:Storage')->getGameStorage($result->getGameSession()->getId());
+        VarDumper::dump($storage);
 
-        return new Response($storage->getResources());
+        return $this->render('IasGameBundle:Play:play.html.twig', ['storage' => $storage]);
+
+//        $storage = $this->getDoctrine()->getRepository('IasGameBundle:Storage')->findOneById($result->);
+//
+//        if ($storage)
+//            return new Response($storage->getResources());
+//        else
+//            return $this->redirectToRoute('ias_game_get_game_session');
 
     }
 
