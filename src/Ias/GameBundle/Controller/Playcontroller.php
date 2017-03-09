@@ -58,8 +58,12 @@ class PlayController extends Controller
 
     /**
      * Получить предыдущий ход
+     *
+     * @param integer $id number game
+     *
+     * @return JsonResponse $data
      */
-    public function getPrevStepAction()
+    public function getPrevStepAction($id)
     {
     }
 

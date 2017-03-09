@@ -3,13 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="af9fd658-f715-48a2-b7b2-2076075009bb" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/base.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/base.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Ias/GameBundle/Repository/PlayRepository.php" afterPath="$PROJECT_DIR$/src/Ias/GameBundle/Repository/PlayRepository.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Ias/GameBundle/Repository/StorageRepository.php" afterPath="$PROJECT_DIR$/src/Ias/GameBundle/Repository/StorageRepository.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Ias/GameBundle/Resources/config/routing.yml" afterPath="$PROJECT_DIR$/src/Ias/GameBundle/Resources/config/routing.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Ias/GameBundle/Resources/views/Play/play.html.twig" afterPath="$PROJECT_DIR$/src/Ias/GameBundle/Resources/views/Play/play.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Ias/GameBundle/Resources/views/base.html.twig" afterPath="$PROJECT_DIR$/src/Ias/GameBundle/Resources/views/base.html.twig" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/Ias/GameBundle/Controller/PlayController.php" afterPath="$PROJECT_DIR$/src/Ias/GameBundle/Controller/GameController.php" />
     </list>
     <ignored path="symfony.my.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -38,21 +31,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="GameController.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="GameController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Ias/GameBundle/Controller/GameController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="820">
+            <state relative-caret-position="871">
               <caret line="184" column="154" selection-start-line="184" selection-start-column="154" selection-end-line="184" selection-end-column="154" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PlayController.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="PlayController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Ias/GameBundle/Controller/PlayController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="259">
-              <caret line="28" column="39" selection-start-line="28" selection-start-column="39" selection-end-line="28" selection-end-column="39" />
+            <state relative-caret-position="850">
+              <caret line="61" column="7" selection-start-line="61" selection-start-column="7" selection-end-line="61" selection-end-column="7" />
               <folding>
                 <element signature="e#133#190#0#PHP" expanded="true" />
               </folding>
@@ -771,12 +764,12 @@
       <workItem from="1488780489560" duration="14628000" />
       <workItem from="1488865974719" duration="9120000" />
       <workItem from="1489043040348" duration="1327000" />
-      <workItem from="1489049113955" duration="10079000" />
+      <workItem from="1489049113955" duration="10703000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="148835000" />
+    <option name="totallyTimeSpent" value="149459000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1176" extended-state="6" />
@@ -1168,21 +1161,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Ias/GameBundle/Controller/PlayController.php">
+    <entry file="file://$PROJECT_DIR$/src/Ias/GameBundle/Controller/GameController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="259">
-          <caret line="28" column="39" selection-start-line="28" selection-start-column="39" selection-end-line="28" selection-end-column="39" />
-          <folding>
-            <element signature="e#133#190#0#PHP" expanded="true" />
-          </folding>
+        <state relative-caret-position="871">
+          <caret line="184" column="154" selection-start-line="184" selection-start-column="154" selection-end-line="184" selection-end-column="154" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Ias/GameBundle/Controller/GameController.php">
+    <entry file="file://$PROJECT_DIR$/src/Ias/GameBundle/Controller/PlayController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="820">
-          <caret line="184" column="154" selection-start-line="184" selection-start-column="154" selection-end-line="184" selection-end-column="154" />
-          <folding />
+        <state relative-caret-position="850">
+          <caret line="61" column="7" selection-start-line="61" selection-start-column="7" selection-end-line="61" selection-end-column="7" />
+          <folding>
+            <element signature="e#133#190#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
