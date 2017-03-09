@@ -1,18 +1,26 @@
 {% extends 'IasGameBundle::base.html.twig' %}
 
-{% block page_stylesheets %}
-    {{ parent() }}
-    <link href="{{ asset('/bundles/iasgame/css/GameSession.css') }}" rel="stylesheet"/>
-{% endblock %}
+   {% block javascript %}
+       {{ parent() }}
+   {% endblock %}
 
 {% block body %}
+    <script>
+        var $ias_scope = {
+            game_id: {{ game }}
+        };
+    </script>
+
     <div class="container">
         <div class="row">
             <div class="col-sm-12">
-                {{ game.getStorage() }}
+
+                {{ storage.getResources()|raw }}
             </div>
         </div>
     </div>
 {% endblock %}
+
+
 
 

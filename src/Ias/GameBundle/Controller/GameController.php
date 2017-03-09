@@ -18,7 +18,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\VarDumper\VarDumper;
 
 
-class PlayController extends Controller
+class GameController extends Controller
 {
     /**
      * Инициализация игровой сессии. Создание заявки на поиск оппонента
@@ -178,17 +178,11 @@ class PlayController extends Controller
         if (!$result)
             return $this->redirectToRoute('ias_game_get_game_session');
 
-        $storage = $this->getDoctrine()->getRepository('IasGameBundle:Storage')->getGameStorage($result->getGameSession()->getId());
+        $storage = $this->getDoctrine()->getRepository('IasGameBundle:Storage')->getGameStorage($result[0]->getGameSession()->getId());
         VarDumper::dump($storage);
 
-        return $this->render('IasGameBundle:Play:play.html.twig', ['storage' => $storage]);
-
-//        $storage = $this->getDoctrine()->getRepository('IasGameBundle:Storage')->findOneById($result->);
-//
-//        if ($storage)
-//            return new Response($storage->getResources());
-//        else
-//            return $this->redirectToRoute('ias_game_get_game_session');
+        //  Если что, можно вместе с хранилищем тянуть id игры
+        return $this->render('IasGameBundle:Play:play.html.twig', ['storage' => $storage[0], 'game' => $result[0]->getGameSession()->getGame()->getId()]);
 
     }
 

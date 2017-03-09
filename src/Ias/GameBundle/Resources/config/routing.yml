@@ -8,7 +8,7 @@ ias_game_get_game_session:
 
 ias_game_is_game_session:
     path:     /game/isgame
-    defaults: {_controller: IasGameBundle:Play:isStartGameSession, _format: json}
+    defaults: {_controller: IasGameBundle:Game:isStartGameSession, _format: json}
     methods: [POST]
     requirements:
         _format: json|csv
@@ -16,25 +16,25 @@ ias_game_is_game_session:
 
 ias_game_init_game_session:
     path:     /game/init
-    defaults: {_controller: IasGameBundle:Play:initGameSession}
+    defaults: {_controller: IasGameBundle:Game:initGameSession}
 
 ias_game_join_game:
     path: /game/join/{id}
-    defaults: {_controller: IasGameBundle:Play:joinGameSession}
+    defaults: {_controller: IasGameBundle:Game:joinGameSession}
     methods: [GET]
     requirements:
         id: '\d+'
 
 ias_game_unjoin_game:
     path: /game/unjoin/{id}
-    defaults: {_controller: IasGameBundle:Play:unjoinGameSession}
+    defaults: {_controller: IasGameBundle:Game:unjoinGameSession}
     methods: [GET]
     requirements:
         id: '\d+'
 
 ias_game_play_game:
     path: /game/play/
-    defaults: {_controller: IasGameBundle:Play:Play}
+    defaults: {_controller: IasGameBundle:Game:Play}
 
 
 ####Для дебага####

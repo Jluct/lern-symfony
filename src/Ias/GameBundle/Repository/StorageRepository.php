@@ -16,14 +16,14 @@ class StorageRepository extends \Doctrine\ORM\EntityRepository
     {
         $query = $this->getEntityManager()->createQueryBuilder()
             ->select('s')
-            ->from('IasGameBundle:GameSession','gs')
-            ->leftJoin('gs.game', 'g')
-            ->leftJoin('g.storage', 's')
+            ->from(self::TABLE,'s')
+            ->leftJoin('s.game', 'g')
+            ->leftJoin('g.gameSession', 'gs')
             ->where('gs.id = :id')
             ->setParameters(['id' => $id]);
 
         try {
-            return $query->getQuery()->getResult()[0];
+            return $query->getQuery()->getResult();
         } catch (\Doctrine\ORM\NoResultException $e) {
             return null;
         }

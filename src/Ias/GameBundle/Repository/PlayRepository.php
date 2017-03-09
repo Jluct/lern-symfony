@@ -26,7 +26,7 @@ class PlayRepository extends \Doctrine\ORM\EntityRepository
             ->setParameters(['id' => $id]);
 
         try {
-            return $query->getQuery()->getFirstResult();
+            return $query->getQuery()->getResult();
         } catch (\Doctrine\ORM\NoResultException $e) {
             return null;
         }
