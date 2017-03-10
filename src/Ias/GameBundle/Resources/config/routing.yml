@@ -37,6 +37,15 @@ ias_game_play_game:
     defaults: {_controller: IasGameBundle:Game:Play}
 
 
+ias_game_play:
+    path:     /game/play/get/data
+    defaults: {_controller: IasGameBundle:Play:getData, _format: json}
+#    methods: [POST]
+    requirements:
+        _format: json|csv
+
+
+
 ####Для дебага####
 ias_game_example:
      path:     /example

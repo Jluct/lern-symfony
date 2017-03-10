@@ -9,36 +9,48 @@
 namespace Ias\GameBundle\Controller;
 
 
+use Ias\GameBundle\Service\Game\Play;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\VarDumper\VarDumper;
 
 class PlayController extends Controller
 {
     /**
      *  Получить данные игры
      *
-     * @param integer $id number game
-     *
      * @return JsonResponse $data
      */
-    public function getDataAction($id)
+    public function getDataAction()
     {
-        $data = [];
 
-        return new JsonResponse($data);
+        /**
+         * @var Play $play
+         */
+        $play = $this->get('play_services');
+        
+        return new JsonResponse($play->getGamePlay($this->getUser()->getId()));
     }
 
     /**
      * Возвращает текущий ход
      *
-     * @param integer $id number game
-     *
      * @return JsonResponse $data
      */
-    public function getStepAction($id)
+    public function getStepAction()
     {
         $data = [];
+
+        /**
+         * @var Play $play
+         */
+        $play = $this->get('play_service');
+        $play->getGamePlay($this->getUser()->getId());
+
+        $data["last"] = $play::getPlay()->getLast();
+        $data["updated"] = $play::getPlay()->getUpdated();
+        $data["action"] = $play::getPlay()->getAction();
 
         return new JsonResponse($data);
     }

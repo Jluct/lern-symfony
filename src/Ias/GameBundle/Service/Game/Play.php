@@ -20,6 +20,10 @@ final class Play
     private $game_session = null;
     private $play = null;
 
+    /**
+     * @return null
+     */
+
     public static function getPlay(ObjectManager $manager)
     {
         if (is_null(self::$_instance)) {
@@ -65,14 +69,19 @@ final class Play
 
     public function getGamePlay($user_id)
     {
+
+
+        if ($this->play != null)
+            return $this->play;
+
+        /**
+         * @var Play $play
+         */
         $play = $this->manager->getRepository('IasGameBundle:Play')->getPlay($user_id);
+        $this->play = $play;
 
-        if ($play != null) {
-            $this->play = $play;
-            return $play;
-        }
+        return $play;
 
-        return null;
     }
 
 

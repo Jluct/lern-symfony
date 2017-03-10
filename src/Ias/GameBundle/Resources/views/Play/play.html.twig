@@ -1,8 +1,6 @@
 {% extends 'IasGameBundle::base.html.twig' %}
 
-   {% block javascript %}
-       {{ parent() }}
-   {% endblock %}
+
 
 {% block body %}
     <script>
@@ -21,6 +19,9 @@
     </div>
 {% endblock %}
 
-
+   {% block javascript %}
+       {{ parent() }}
+       <script src="{{ asset('/bundles/iasgame/js/play.js') }}"></script>
+   {% endblock %}
 
 
