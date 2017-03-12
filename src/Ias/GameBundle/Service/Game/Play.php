@@ -77,22 +77,23 @@ final class Play
             return $this->play;
 
         $play = $this->manager->getRepository('IasGameBundle:Play')->getPlay($user_id);
-        $this->play = $play[0];
 
-        return $play[0];
+        if ($play != null)
+            $this->play = $play[0];
+
+        VarDumper::dump($this->play);
+        return $this->play;
 
     }
 
     public function getProperties()
     {
-
         $data['id'] = $this->play->getId();
         $data['history'] = $this->play->getHistory();
         $data['updated'] = $this->play->getUpdated()->format('d:m:Y H:i:s');//date('d:m:Y H:i:s', $this->play->getUpdated());
         $data['players'] = $this->play->getPlayers();
         $data['last'] = $this->play->getLast();
         $data['action'] = $this->play->getAction();
-
 
         return $data;
     }
@@ -105,7 +106,10 @@ final class Play
     public function refreshPlay($request)
     {
         $history = $this->play->getHistory();
-        $this->play->setHistory($history[] = $request->get("action"));
+        $history[] = $request->get("action");
+        $this->play->setHistory($history);
+//        return $history;
+
         $this->play->setUpdated(new \DateTime());
         $this->play->setAction($request->get("action"));
         $this->play->setLast($request->get("last"));

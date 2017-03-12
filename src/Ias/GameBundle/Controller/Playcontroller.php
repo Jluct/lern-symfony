@@ -64,7 +64,7 @@ class PlayController extends Controller
     {
         $em = $this->get('play_services');
         $em->getGamePlay($this->getUser()->getId());
-        $em->refreshPlay($request->request);
+//        $em->refreshPlay($request->request);
 //        if(empty($play))
 //            return $this->redirectToRoute('ias_game_get_game_session');
 

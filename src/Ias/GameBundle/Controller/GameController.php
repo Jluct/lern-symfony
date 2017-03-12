@@ -144,18 +144,6 @@ class GameController extends Controller
         if ($result)
             $data['start'] = true;
 
-//        $game_session = $this->get('game_session');
-//
-//        if (!$game_session->loadGameSession($id)->checkedGameSession(true))
-//            return $this->redirectToRoute('ias_game_get_game_session');
-
-//        if ($game_session->isMaxPlayers()) {
-        //      начинаем сессию матча
-
-//            return $this->redirectToRoute('ias_game_play_game');
-//        }
-
-
         return new JsonResponse($data);
 
     }
@@ -178,7 +166,9 @@ class GameController extends Controller
         if (!$result)
             return $this->redirectToRoute('ias_game_get_game_session');
 
-        $storage = $this->getDoctrine()->getRepository('IasGameBundle:Storage')->getGameStorage($result->getGameSession()->getId());
+        $storage = $this->getDoctrine()
+            ->getRepository('IasGameBundle:Storage')
+            ->getGameStorage($result->getGameSession()->getId());
         VarDumper::dump($storage);
 
         //  Если что, можно вместе с хранилищем тянуть id игры
