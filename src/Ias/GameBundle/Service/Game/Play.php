@@ -10,6 +10,7 @@ namespace Ias\GameBundle\Service\Game;
 
 use Ias\GameBundle\Entity\Play as P;
 use Doctrine\Common\Persistence\ObjectManager;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\VarDumper\VarDumper;
 
 final class Play
@@ -18,6 +19,9 @@ final class Play
 
     private $manager = null;
     private $game_session = null;
+    /**
+     * @var \Ias\GameBundle\Entity\Play
+     */
     private $play = null;
 
     /**
@@ -63,25 +67,57 @@ final class Play
         $this->manager->flush();
 
         $this->play = $play;
-        VarDumper::dump($this->play);
+
         return $this->play;
     }
 
     public function getGamePlay($user_id)
     {
-
-
         if ($this->play != null)
             return $this->play;
 
-        /**
-         * @var Play $play
-         */
         $play = $this->manager->getRepository('IasGameBundle:Play')->getPlay($user_id);
-        $this->play = $play;
+        $this->play = $play[0];
 
-        return $play;
+        return $play[0];
 
+    }
+
+    public function getProperties()
+    {
+
+        $data['id'] = $this->play->getId();
+        $data['history'] = $this->play->getHistory();
+        $data['updated'] = $this->play->getUpdated()->format('d:m:Y H:i:s');//date('d:m:Y H:i:s', $this->play->getUpdated());
+        $data['players'] = $this->play->getPlayers();
+        $data['last'] = $this->play->getLast();
+        $data['action'] = $this->play->getAction();
+
+
+        return $data;
+    }
+
+    /**
+     * @param Response ->request $request
+     * @return bool
+     * @throws \Exception
+     */
+    public function refreshPlay($request)
+    {
+        $history = $this->play->getHistory();
+        $this->play->setHistory($history[] = $request->get("action"));
+        $this->play->setUpdated(new \DateTime());
+        $this->play->setAction($request->get("action"));
+        $this->play->setLast($request->get("last"));
+
+        try {
+            $em = $this->manager;
+            $em->persist($this->play);
+            $em->flush();
+            return true;
+        } catch (\Exception $e) {
+            throw new \Exception('not save');
+        }
     }
 
 

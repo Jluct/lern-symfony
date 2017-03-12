@@ -178,11 +178,11 @@ class GameController extends Controller
         if (!$result)
             return $this->redirectToRoute('ias_game_get_game_session');
 
-        $storage = $this->getDoctrine()->getRepository('IasGameBundle:Storage')->getGameStorage($result[0]->getGameSession()->getId());
+        $storage = $this->getDoctrine()->getRepository('IasGameBundle:Storage')->getGameStorage($result->getGameSession()->getId());
         VarDumper::dump($storage);
 
         //  Если что, можно вместе с хранилищем тянуть id игры
-        return $this->render('IasGameBundle:Play:play.html.twig', ['storage' => $storage[0], 'game' => $result[0]->getGameSession()->getGame()->getId()]);
+        return $this->render('IasGameBundle:Play:play.html.twig', ['storage' => $storage[0], 'game' => $result->getGameSession()->getGame()->getId()]);
 
     }
 

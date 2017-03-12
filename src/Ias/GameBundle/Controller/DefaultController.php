@@ -42,42 +42,43 @@ class DefaultController extends Controller
 
     public function exampleAction(Request $request)
     {
-        $task = new Task();
-
-        $task->setTask('Example 1');
-        $task->setDueDate(new \DateTime('tomorrow'));
-        $task->setDescription('');
-
-        $tag1 = new Tag();
-        $tag1->setName('tag1');
-        $task->getTags()->add($tag1);
-        $tag2 = new Tag();
-        $tag2->setName('tag2');
-        $task->getTags()->add($tag2);
-
-        $form = $this->createForm(TaskType::class, $task);
-
-        $form->handleRequest($request);
-
-        if ($form->isSubmitted() && $form->isValid()) {
-            // $form->getData() holds the submitted values
-            // but, the original `$task` variable has also been updated
-            $task = $form->getData();
-            var_dump($task);
-            $this->addFlash(
-                'notice',
-                'Your changes were saved!'
-            );
-
-            // ... perform some action, such as saving the task to the database
-            // for example, if Task is a Doctrine entity, save it!
-            // $em = $this->getDoctrine()->getManager();
-            // $em->persist($task);
-            // $em->flush();
-
-            //return $this->redirectToRoute('task_success');
-        }
-
-        return $this->render("IasGameBundle:example:test.html.twig", ['form' => $form->createView()]);
+        
+//        $task = new Task();
+//
+//        $task->setTask('Example 1');
+//        $task->setDueDate(new \DateTime('tomorrow'));
+//        $task->setDescription('');
+//
+//        $tag1 = new Tag();
+//        $tag1->setName('tag1');
+//        $task->getTags()->add($tag1);
+//        $tag2 = new Tag();
+//        $tag2->setName('tag2');
+//        $task->getTags()->add($tag2);
+//
+//        $form = $this->createForm(TaskType::class, $task);
+//
+//        $form->handleRequest($request);
+//
+//        if ($form->isSubmitted() && $form->isValid()) {
+//            // $form->getData() holds the submitted values
+//            // but, the original `$task` variable has also been updated
+//            $task = $form->getData();
+//            var_dump($task);
+//            $this->addFlash(
+//                'notice',
+//                'Your changes were saved!'
+//            );
+//
+//            // ... perform some action, such as saving the task to the database
+//            // for example, if Task is a Doctrine entity, save it!
+//            // $em = $this->getDoctrine()->getManager();
+//            // $em->persist($task);
+//            // $em->flush();
+//
+//            //return $this->redirectToRoute('task_success');
+//        }
+//
+//        return $this->render("IasGameBundle:example:test.html.twig", ['form' => $form->createView()]);
     }
 }
