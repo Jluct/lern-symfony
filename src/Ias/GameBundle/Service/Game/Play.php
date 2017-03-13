@@ -19,6 +19,7 @@ final class Play
 
     private $manager = null;
     private $game_session = null;
+    private $access = false;
     /**
      * @var \Ias\GameBundle\Entity\Play
      */
@@ -100,11 +101,15 @@ final class Play
 
     /**
      * @param Response ->request $request
+     * @param $user_id integer
      * @return bool
      * @throws \Exception
      */
-    public function refreshPlay($request)
+    public function refreshPlay($request, $user_id)
     {
+        if ($this->access == false)
+            return false;
+
         $history = $this->play->getHistory();
         $history[] = $request->get("action");
         $this->play->setHistory($history);
@@ -112,7 +117,7 @@ final class Play
 
         $this->play->setUpdated(new \DateTime());
         $this->play->setAction($request->get("action"));
-        $this->play->setLast($request->get("last"));
+        $this->play->setLast($user_id);
 
         try {
             $em = $this->manager;
@@ -122,6 +127,35 @@ final class Play
         } catch (\Exception $e) {
             throw new \Exception('not save');
         }
+    }
+
+
+    /**
+     * @param $user_id integer
+     * @return boolean
+     */
+    public function accessStep($user_id)
+    {
+
+        $position = array_search($this->play->getLast(), $this->play->getPlayers());
+
+        VarDumper::dump($position);
+
+
+        if ($position===false)
+            return false;
+
+        if ($position == count($this->play->getPlayers()) - 1) {
+            $position = 0;
+        } else {
+            $position++;
+        }
+
+        $current = $this->play->getPlayers()[$position];
+
+        return $this->access = $current == $user_id;
+
+
     }
 
 

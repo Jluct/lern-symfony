@@ -172,7 +172,11 @@ class GameController extends Controller
         VarDumper::dump($storage);
 
         //  Если что, можно вместе с хранилищем тянуть id игры
-        return $this->render('IasGameBundle:Play:play.html.twig', ['storage' => $storage[0], 'game' => $result->getGameSession()->getGame()->getId()]);
+        return $this->render('IasGameBundle:Play:play.html.twig', [
+                'storage' => $storage[0],
+                'game' => $result->getGameSession()->getGame()->getId(),
+                'step' => $play->accessStep($id)]
+        );
 
     }
 

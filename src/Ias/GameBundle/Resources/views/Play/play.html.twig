@@ -16,8 +16,15 @@
                 {{ storage.getResources()|raw }}
             </div>
             <div class="col-sm-2">
-                <a href="#" role="button" class="btn btn-success btn-raised" id="step">Отправить ход</a>
-                <a href="#" role="button" class="btn btn-info btn-raised">Обновить</a>
+                <div class="text-center">
+                    {% if step %}
+                        <h3>Ваш ход</h3>
+                    {% else %}
+                        <h3>Ход соперника</h3>
+                    {% endif %}
+                </div>
+                <a href="#" role="button" class="btn btn-success btn-block btn-raised" id="play_step">Отправить ход</a>
+                <a href="#" role="button" class="btn btn-info btn-block btn-raised" id="play_update">Обновить</a>
             </div>
         </div>
     </div>
